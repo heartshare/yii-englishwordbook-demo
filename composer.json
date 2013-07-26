@@ -1,0 +1,9 @@
+{
+    "require": {
+        "yiisoft/yii": "1.1.14-rc",
+        "phpunit/phpunit-selenium": "*",
+        "phpunit/phpunit-story": "*",
+        "phpunit/dbunit": "*",
+        "phpunit/php-invoker": "*"
+    }
+}
