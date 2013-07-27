@@ -1,7 +1,1 @@
-# yii
-assets/
-protected/runtime/
-themes/classic/views/
-
-# composer
-vendor/
+/vendor/
