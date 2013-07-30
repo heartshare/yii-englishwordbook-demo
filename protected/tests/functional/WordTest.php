@@ -31,12 +31,12 @@ class WordTest extends WebTestCase
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
         
-        $this->type('name=Word[en]', '　　fff　');
-        $this->type('name=Word[ja]', '　　えふえふえふ　');
+        $this->type('name=Word[en]', '　　hello　');
+        $this->type('name=Word[ja]', '　　こんにちは　');
         $this->clickAndWait("//input[@value='Create']");
         $this->assertTextPresent('英単語の追加が完了いたしました。');
-        $this->assertTextPresent('fff');
-        $this->assertTextPresent('えふえふえふ');
+        $this->assertTextPresent('hello');
+        $this->assertTextPresent('こんにちは');
     }
     
     public function testView()
@@ -74,13 +74,13 @@ class WordTest extends WebTestCase
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
         
-        $this->type('name=Word[en]', '　　'.$this->words['Word_1']['en'].'a　');
-        $this->type('name=Word[ja]', '　　'.$this->words['Word_1']['ja'].'えー　');
+        $this->type('name=Word[en]', '　　hello　');
+        $this->type('name=Word[ja]', '　　こんにちは　');
 
         $this->clickAndWait("//input[@value='Update']");
         $this->assertTextPresent('英単語の更新が完了いたしました。');
-        $this->assertTextPresent($this->words['Word_1']['en'].'a');
-        $this->assertTextPresent($this->words['Word_1']['ja'].'えー');
+        $this->assertTextPresent('hello');
+        $this->assertTextPresent('こんにちは');
     }
     
     public function testDelete()
