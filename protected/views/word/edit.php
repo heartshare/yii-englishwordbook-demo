@@ -1,15 +1,12 @@
 <?php $this->widget('Flash'); ?>
 <?php $this->renderPartial('_form', compact('word')); ?>
-<?php $this->renderPartial('_sortArea', compact('pages')); ?>
+<?php $this->renderPartial('_sortArea'); ?>
 
-<div class="words">
-    <?php foreach ($words as $word): ?>
-    <span class="word"><?php echo h($word->en); ?></span>
-    <span class="word"><?php echo h($word->ja); ?></span>
-    <?php echo l('update', array('update', 'id' => $word->id)); ?>
-    <?php echo l('delete', '#', array('submit' => array('delete', 'id' => $word->id), 'confirm' => param('confirmDelete'), 'csrf' => true)); ?><br />
-    <?php endforeach; ?>
-</div><!-- /.words -->
+<?php $this->widget('WordListView', array(
+    'dataProvider' => $dataProvider,
+    'itemView' => '_listEdit',
+    'itemsCssClass' => 'words',
+)); ?>
 
 <div class="right">
     <div class="form">

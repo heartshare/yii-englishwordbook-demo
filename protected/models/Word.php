@@ -109,20 +109,23 @@ class Word extends ActiveRecord
     }
 
     /**
-     * Gets the pagination and all words.
+     * Gets the dataProvider by sort and query.
      * @param mixed $sort null or sorting strings
      * @param string $q searching strings
-     * @return array CPagination and all words.
+     * @return CActiveDataProvider
      */
-    public function getAllBySortAndQ($sort, $q = '')
+    public function findAllBySortAndQ($sort, $q = '')
     {
         $sort = substr($sort, 0, 3);
-        $c = $this->getCriteriaBySortAndQ($sort, $q);
 
-        return array(
-            $this->getPages($c, param('wordPerPage'), $q),
-            $this->findAll($c),
-        );
+        return new CActiveDataProvider(get_class($this), array(
+            'criteria' => $this->getCriteriaBySortAndQ($sort, $q),
+            'pagination' => array(
+                'pageSize' => param('wordPerPage'),
+                'pageVar' => 'page',
+                'params' => $q ? compact('q') : null,
+            ),
+        ));
     }
 }
 

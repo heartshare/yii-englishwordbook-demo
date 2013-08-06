@@ -8,11 +8,3 @@
 </div><!-- /.sort-link -->
 
 <?php $this->renderPartial('_actionLink'); ?>
-
-<div class="right">
-    <?php echo h($pages->itemCount); ?> results
-</div>
-
-<div class="center">
-    <?php $this->widget('LinkPager', compact('pages')); ?>
-</div><!-- /.center -->

@@ -41,8 +41,8 @@ class WordController extends Controller
      */
     public function actionIndex($sort = null)
     {
-        list($pages, $words) = Word::model()->getAllBySortAndQ($sort);
-        $this->render('index', compact('pages', 'words'));
+        $dataProvider = Word::model()->findAllBySortAndQ($sort);
+        $this->render('index', compact('dataProvider'));
     }
 
     /**
@@ -55,9 +55,9 @@ class WordController extends Controller
         $this->save($word, '英単語の追加が完了いたしました。');
 
         $this->q = mb_trim(req()->getParam('q'));
-        list($pages, $words) = $word->getAllBySortAndQ($sort, $this->q);
+        $dataProvider = $word->findAllBySortAndQ($sort, $this->q);
 
-        $this->render('edit', compact('word', 'pages', 'words'));
+        $this->render('edit', compact('word', 'dataProvider'));
     }
 
     /**

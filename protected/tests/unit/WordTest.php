@@ -4,7 +4,14 @@ class WordTest extends DbTestCase
 {
     public $fixtures = array(
         'words' => 'Word',
+        'users' => 'User',
     );
+
+    public function setUp()
+    {
+        parent::setUp();
+        user()->setId($this->users['User_1']['id']);
+    }
 
     public function testBeforeValidate()
     {
@@ -20,9 +27,8 @@ class WordTest extends DbTestCase
 
     public function testDefaultScope()
     {
-        user()->setId(1);
         $word = new Word();
-        $this->assertCount(5, Word::model()->findAll());
+        $this->assertCount(5, $word->findAll());
 
         $c = new CDbCriteria();
         $c->alias = $word->getTableAlias(false, false);
@@ -57,14 +63,24 @@ class WordTest extends DbTestCase
         );
     }
 
-    public function testGetAllBySortAndQ()
+    /**
+     * @dataProvider findAllBySortAndQProvider
+     */
+    public function testFindAllBySortAndQ($expectedCount, $sort, $q)
     {
-        list($pages, $words) = Word::model()->getAllBySortAndQ(null);
-        $this->assertInstanceOf('CPagination', $pages);
+        $dataProvider = Word::model()->findAllBySortAndQ($sort, $q);
+        $this->assertEquals($expectedCount, $dataProvider->totalItemCount);
+    }
 
-        $method = parent::getMethod('Word', 'getCriteriaBySortAndQ');
-        $c = $method->invokeArgs(new Word(), array(null, null));
-        $this->assertEquals(Word::model()->findAll($c), $words);
+    public function findAllBySortAndQProvider()
+    {
+        return array(
+            array(5, null, ''),
+            array(1, 'a', ''),
+            array(1, '', 'a'),
+            array(1, '', 'えー'),
+            array(0, '', 'dummy'),
+        );
     }
 }
 
