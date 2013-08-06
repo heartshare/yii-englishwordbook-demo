@@ -54,17 +54,6 @@ class Word extends ActiveRecord
     }
     
     /**
-     * @see CModel::beforeValidate()
-     */
-    protected function beforeValidate()
-    {
-        $this->en = mb_trim($this->en);
-        $this->ja = mb_trim($this->ja);
-        
-        return parent::beforeValidate();
-    }
-    
-    /**
      * @see CActiveRecord::defaultScope()
      */
     public function defaultScope()
