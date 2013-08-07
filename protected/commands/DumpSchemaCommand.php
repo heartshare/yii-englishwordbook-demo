@@ -2,51 +2,79 @@
 
 class DumpSchemaCommand extends CConsoleCommand
 {
+    /**
+     * @see CConsoleCommand::getHelp()
+     */
+    public function getHelp()
+    {
+        return <<<EOD
+USAGE
+    yiic dumpschema <table_name>
+
+EOD;
+    }
+
+    /**
+     * @see CConsoleCommand::run()
+     */
     public function run($args)
     {
+        if (!isset($args[0])) {
+            $this->usageError('テーブル名を入力してください。');
+        }
+
         $schema = $args[0];
         $tables = Yii::app()->db->schema->getTables($schema);
         $result = '';
         
-        foreach ($tables as $def) {
-            $result.="\$this->createTable('".$def->name."', array(\n";
+        foreach ($tables as $table) {
+            $result.="// ".$table->name."\n";
+            $result.="\$this->createTable('".$table->name."', array(\n";
 
-            foreach ($def->columns as $col) {
-                $result.= "    '".$col->name."' => '".$this->getColType($col)."',\n";
+            foreach ($table->columns as $column) {
+                $result.= "    '".$column->name."' => '".$this->getColumnType($column)."',\n";
             }
             $result.= "), \$options);\n\n";
         }
         echo $result;
     }
     
-    public function getColType($col)
+    /**
+     * Gets the convert column type.
+     * @param string $column the column type
+     * return string the convert column type
+     */
+    public function getColumnType($column)
     {
-        if ($col->isPrimaryKey) {
+        if ($column->isPrimaryKey) {
             return 'pk';
         }
-        $result = $col->dbType;
 
-        if (strpos($col->dbType, 'int') !== false) {
+        $result = $column->dbType;
+
+        if (strpos($column->dbType, 'int') !== false) {
             $result = 'integer';
         }
-        if ($col->dbType === 'tinyint(1)') {
+        if ($column->dbType === 'tinyint(1)') {
             $result = 'boolean';
         }
-        if (strpos($col->dbType, 'varchar') !== false) {
+        if (strpos($column->dbType, 'varchar') !== false) {
             $result = 'string';
         }
-        if ($col->dbType === 'binary') {
+        if ($column->dbType === 'binary') {
             $result = 'blob';
         }
-        if (!$col->allowNull) {
+
+        if (!$column->allowNull) {
             $result.= ' NOT NULL';
         }
-        if ($col->defaultValue !== null) {
-            $result.= " DEFAULT \'{$col->defaultValue}\'";
+        if ($column->defaultValue !== null) {
+            $result.= " DEFAULT \'{$column->defaultValue}\'";
         }
-        if ($col->comment !== '') {
-            $result.= " COMMENT \'{$col->comment}\'";
+        if ($column->comment !== '') {
+            $result.= " COMMENT \'{$column->comment}\'";
         }
+
         return $result;
     }
 }
