@@ -15,7 +15,8 @@ class WebTestCase extends CWebTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->setBrowser('*firefox');
+        //$this->setBrowser('*firefox');
+        $this->setBrowser('*googlechrome');
         $this->setBrowserUrl(TEST_BASE_URL);
     }
 
