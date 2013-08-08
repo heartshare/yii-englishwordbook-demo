@@ -79,7 +79,7 @@ class WordTest extends DbTestCase
             array(1, 'a', ''),
             array(1, '', 'a'),
             array(1, '', 'えー'),
-            array(0, '', 'dummy'),
+            array(0, '', uniqid()),
         );
     }
 }

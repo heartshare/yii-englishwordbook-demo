@@ -34,7 +34,10 @@ class WordTest extends WebTestCase
         $this->type('name=Word[en]', '　　hello　');
         $this->type('name=Word[ja]', '　　こんにちは　');
         $this->clickAndWait("//input[@value='Create']");
+        $this->assertLocation(TEST_BASE_URL.'word/8');
         $this->assertTextPresent('英単語の追加が完了いたしました。');
+        $this->assertTextNotPresent('　　hello　');
+        $this->assertTextNotPresent('　　こんにちは　');
         $this->assertTextPresent('hello');
         $this->assertTextPresent('こんにちは');
     }
@@ -78,7 +81,10 @@ class WordTest extends WebTestCase
         $this->type('name=Word[ja]', '　　こんにちは　');
 
         $this->clickAndWait("//input[@value='Update']");
+        $this->assertLocation(TEST_BASE_URL.'word/1');
         $this->assertTextPresent('英単語の更新が完了いたしました。');
+        $this->assertTextNotPresent('　　hello　');
+        $this->assertTextNotPresent('　　こんにちは　');
         $this->assertTextPresent('hello');
         $this->assertTextPresent('こんにちは');
     }
@@ -99,6 +105,7 @@ class WordTest extends WebTestCase
         
         $this->clickAndWait('link=delete');
         $this->assertConfirmation(param('confirmDelete'));
+        $this->assertLocation(TEST_BASE_URL.'word/edit');
         $this->assertTextPresent('英単語の削除が完了いたしました。');
         $this->assertTextPresent('4 results');
         $this->assertTextNotPresent($this->words['Word_5']['en']);
