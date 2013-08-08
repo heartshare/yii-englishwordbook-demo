@@ -31,8 +31,7 @@ class WordTest extends DbTestCase
         $this->assertCount(5, $word->findAll());
 
         $c = new CDbCriteria();
-        $c->alias = $word->getTableAlias(false, false);
-        $c->condition = 'user_id = :user_id';
+        $c->condition = $word->getTableAlias(false, false).'.user_id = :user_id';
         $c->params = array(':user_id' => user()->id);
         $this->assertEquals($word->getDbCriteria(), $c);
     }

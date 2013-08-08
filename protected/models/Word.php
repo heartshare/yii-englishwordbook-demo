@@ -59,8 +59,7 @@ class Word extends ActiveRecord
     public function defaultScope()
     {
         return array(
-            'alias' => $this->getTableAlias(false, false),
-            'condition' => 'user_id = :user_id',
+            'condition' => $this->getTableAlias(false, false).'.user_id = :user_id',
             'params' => array(':user_id' => user()->id),
         );
     }
