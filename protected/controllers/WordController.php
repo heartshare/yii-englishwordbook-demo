@@ -6,11 +6,6 @@
 class WordController extends Controller
 {
     /**
-     * @var string the query strings
-     */
-    public $q;
-
-    /**
      * @see CController::filters()
      */
     public function filters()
@@ -54,10 +49,10 @@ class WordController extends Controller
         $word = new Word();
         $this->save($word, '英単語の追加が完了いたしました。');
 
-        $this->q = mb_trim(req()->getParam('q'));
-        $dataProvider = $word->findAllBySortAndQ($sort, $this->q);
+        $q = mb_trim(req()->getParam('q'));
+        $dataProvider = $word->findAllBySortAndQ($sort, $q);
 
-        $this->render('edit', compact('word', 'dataProvider'));
+        $this->render('edit', compact('word', 'q', 'dataProvider'));
     }
 
     /**
