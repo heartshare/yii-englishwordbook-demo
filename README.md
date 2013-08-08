@@ -60,9 +60,6 @@ Composer では Yii と PHPUnit などがインストールされます。
 ランタイム関連のエラーが出る場合は、  
 /assets/, /protected/runtime/ のパーミッションを書き込み可能に変更してください。
 
-Selenium Server 2.33.0 は Firefox 22 だとエラーが出るので  
-Firefox 21 に戻すなどの処置が必要です (Selenium Server 2.34 で修正される模様) 。
-  
 ## Copyright and license
 Copyright &copy; 2013 Tomoki Morita.  
 Distributed under the [MIT License](http://www.opensource.org/licenses/MIT)
