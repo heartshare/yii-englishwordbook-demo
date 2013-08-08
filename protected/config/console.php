@@ -2,7 +2,7 @@
 
 return array(
     'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-    'name' => 'English Wordbook Consle Yii Framework',
+    'name' => 'English Wordbook Console Yii Framework',
     'preload' => array(
         'log',
     ),
