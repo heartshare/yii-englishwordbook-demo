@@ -16,10 +16,6 @@ class UserIdentity extends CUserIdentity
             'username' => $this->username,
         ));
 
-        if ($this->password === '') {
-            $this->password = 'dummy';
-        }
-
         if ($user === null) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
 
