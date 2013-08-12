@@ -3,7 +3,7 @@
 これは Yii Framework を使った英単語帳アプリのデモです。  
   
 ## 使用環境
-Yii Framework: 1.1.14rc  
+Yii Framework: 1.1.14  
 データベース: MySQL または SQLite3  
 
 ## 動作確認の手順
