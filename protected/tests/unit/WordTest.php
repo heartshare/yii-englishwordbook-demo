@@ -13,18 +13,6 @@ class WordTest extends DbTestCase
         user()->setId($this->users['User_1']['id']);
     }
 
-    public function testBeforeValidate()
-    {
-        $word = new Word();
-        $word->setAttributes(array(
-            'en' => '　　hello　',
-            'ja' => '　　こんにちは　',
-        ));
-        $this->assertTrue($word->validate());
-        $this->assertEquals('hello', $word->en);
-        $this->assertEquals('こんにちは', $word->ja);
-    }
-
     public function testDefaultScope()
     {
         $word = new Word();
@@ -52,13 +40,13 @@ class WordTest extends DbTestCase
         return array(
             array(array(), 't.id DESC', null, ''),
             array(array(), 't.id DESC', 'new', ''),
-            array(array(), 't.id DESC', 'abcde', ''),
+            array(array(), 't.id DESC', uniqid(), ''),
             array(array(), 't.en', 'az', ''),
             array(array(), 't.en DESC', 'za', ''),
             array(array(), 't.id', 'old', ''),
             array(array(), 'RAND()', 'rnd', ''),
             array(array(':ycp0' => 'a%'), 't.en', 'a', ''),
-            array(array(':ycp1' => '%abcde%', ':ycp2' => '%abcde%'), 't.en', null, 'abcde'),
+            array(array(':ycp1' => '%a%', ':ycp2' => '%a%'), 't.en', null, 'a'),
         );
     }
 
