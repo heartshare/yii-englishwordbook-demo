@@ -10,6 +10,7 @@ class WordTest extends WebTestCase
     {
         $this->open('word/index');
         $this->login();
+        $this->assertTextPresent('5 results');
         $this->checkSortArea();
     }
     
@@ -17,6 +18,7 @@ class WordTest extends WebTestCase
     {
         $this->open('word/edit');
         $this->login();
+        $this->assertTextPresent('5 results');
         $this->checkSortArea();
         
         // test search form
