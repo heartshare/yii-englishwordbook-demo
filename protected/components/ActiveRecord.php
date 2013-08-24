@@ -42,6 +42,6 @@ class ActiveRecord extends CActiveRecord
         $pages->params = $q ? compact('q') : null;
 
         return $pages;
-    } 
+    }
 }
 

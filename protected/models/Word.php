@@ -20,7 +20,7 @@ class Word extends ActiveRecord
     {
         return parent::model($className);
     }
-    
+
     /**
      * @see CActiveRecord::tableName()
      */
@@ -28,7 +28,7 @@ class Word extends ActiveRecord
     {
         return 'word';
     }
-    
+
     /**
      * @see CModel::attributeLabels()
      */
@@ -39,7 +39,7 @@ class Word extends ActiveRecord
             'ja' => '日本語訳',
         );
     }
-    
+
     /**
      * @see CModel::rules()
      */
@@ -52,7 +52,7 @@ class Word extends ActiveRecord
             array('ja', 'length', 'max'=>50),
         );
     }
-    
+
     /**
      * @see CActiveRecord::defaultScope()
      */

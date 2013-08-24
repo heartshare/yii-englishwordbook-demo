@@ -7,7 +7,7 @@ class SiteTest extends WebTestCase
         $this->open('site/about');
         $this->assertTextPresent('このサイトについて');
     }
-    
+
     public function testLoginLogout()
     {
         $this->open('');

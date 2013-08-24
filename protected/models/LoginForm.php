@@ -8,7 +8,7 @@ class LoginForm extends CFormModel
     public $username;
     public $password;
     public $rememberMe;
-    
+
     /**
      * @see CModel::rules()
      */
@@ -19,7 +19,7 @@ class LoginForm extends CFormModel
             array('rememberMe', 'boolean'),
         );
     }
-    
+
     /**
      * @see CModel::attributeLabels()
      */
@@ -31,7 +31,7 @@ class LoginForm extends CFormModel
             'rememberMe' => '次回から自動的にログイン',
         );
     }
-    
+
     /**
      * authenticate
      */

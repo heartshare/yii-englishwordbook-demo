@@ -17,7 +17,7 @@
             <?php echo app()->name.Yii::getVersion(); ?>
         </div><!-- /#logo -->
     </div><!-- /#header -->
-    
+
     <div id="main">
         <div class="inner">
             <?php echo $content; ?>
@@ -29,7 +29,7 @@
             <?php endif; ?>
         </div>
     </div><!-- /#main -->
-    
+
     <div id="footer">
         <ul>
             <li><?php echo l('ホーム', array('/word/index')); ?></li>

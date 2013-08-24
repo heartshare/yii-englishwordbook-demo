@@ -6,7 +6,7 @@
 class UserIdentity extends CUserIdentity
 {
     private $id;
-    
+
     /**
      * @see CUserIdentity::authenticate()
      */
@@ -28,7 +28,7 @@ class UserIdentity extends CUserIdentity
         }
         return !$this->errorCode;
     }
-    
+
     /**
      * @see CUserIdentity::getId()
      */

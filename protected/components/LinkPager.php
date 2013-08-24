@@ -17,7 +17,7 @@ class LinkPager extends CLinkPager
         $this->htmlOptions['id'] = $this->getId();
         $this->htmlOptions['class'] = 'pager';
     }
-    
+
     /**
      * @see CLinkPager::run()
      */

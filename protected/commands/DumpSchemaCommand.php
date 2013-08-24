@@ -26,7 +26,7 @@ EOD;
         $schema = $args[0];
         $tables = Yii::app()->db->schema->getTables($schema);
         $result = '';
-        
+
         foreach ($tables as $table) {
             $result.="// ".$table->name."\n";
             $result.="\$this->createTable('".$table->name."', array(\n";
@@ -38,7 +38,7 @@ EOD;
         }
         echo $result;
     }
-    
+
     /**
      * Gets the convert column type.
      * @param string $column the column type

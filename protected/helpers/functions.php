@@ -50,8 +50,8 @@ function dump($data) {
 }
 
 function autoLink($text) {
-    $text = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank">$1</a>', $text); 
-    $text = preg_replace("/href=\"www/i", "href=\"http://www", $text); 
+    $text = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1" target="_blank">$1</a>', $text);
+    $text = preg_replace("/href=\"www/i", "href=\"http://www", $text);
     return $text;
 }
 

@@ -20,7 +20,7 @@ class User extends ActiveRecord
     {
         return parent::model($className);
     }
-    
+
     /**
      * @see CActiveRecord::tableName()
      */

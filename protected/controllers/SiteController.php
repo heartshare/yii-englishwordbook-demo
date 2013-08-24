@@ -64,7 +64,7 @@ class SiteController extends Controller
         }
         $this->render('login', compact('loginForm'));
     }
-    
+
     /**
      * Logs out the current user and redirect to homepage.
      */
