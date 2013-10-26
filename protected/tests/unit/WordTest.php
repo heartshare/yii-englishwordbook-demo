@@ -15,13 +15,10 @@ class WordTest extends DbTestCase
 
     public function testDefaultScope()
     {
-        $word = new Word();
-        $this->assertCount(5, $word->findAll());
-
         $c = new CDbCriteria();
-        $c->condition = $word->getTableAlias(false, false).'.user_id = :user_id';
+        $c->condition = Word::model()->getTableAlias(false, false).'.user_id = :user_id';
         $c->params = array(':user_id' => user()->id);
-        $this->assertEquals($word->getDbCriteria(), $c);
+        $this->assertEquals(Word::model()->getDbCriteria(), $c);
     }
 
     /**
