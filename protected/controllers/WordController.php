@@ -36,7 +36,7 @@ class WordController extends Controller
      */
     public function actionIndex($sort = null)
     {
-        $dataProvider = Word::model()->findAllBySortAndQ($sort);
+        $dataProvider = Word::model()->findAllBySort($sort);
         $this->render('index', compact('dataProvider'));
     }
 
@@ -50,7 +50,7 @@ class WordController extends Controller
         $this->save($word, '英単語の追加が完了いたしました。');
 
         $q = mb_trim(req()->getParam('q'));
-        $dataProvider = $word->findAllBySortAndQ($sort, $q);
+        $dataProvider = $q !== '' ? $word->search($q) : $word->findAllBySort($sort);
 
         $this->render('edit', compact('word', 'q', 'dataProvider'));
     }

@@ -46,8 +46,10 @@ class Word extends ActiveRecord
     public function rules()
     {
         return array(
+            // en
             array('en', 'required'),
             array('en', 'length', 'max'=>50),
+            // ja
             array('ja', 'required'),
             array('ja', 'length', 'max'=>50),
         );
@@ -65,23 +67,20 @@ class Word extends ActiveRecord
     }
 
     /**
-     * Gets the criteria by sort and query.
+     * Finds the all words by sort.
      * @param mixed $sort null or sorting strings
-     * @param string $q searching strings
-     * @return CDbCriteria the query criteria
+     * @return CActiveDataProvider
      */
-    protected function getCriteriaBySortAndQ($sort, $q)
+    public function findAllBySort($sort)
     {
         $c = new CDbCriteria();
-        $c->addSearchCondition('t.en', $q, true, 'OR');
-        $c->addSearchCondition('t.ja', $q, true, 'OR');
         $c->order = 't.id DESC';
 
         if (strlen($sort) === 1) {
             $c->addSearchCondition('t.en', $sort.'%', false);
             $c->order = 't.en';
         }
-        if ($sort === 'az' || $q) {
+        if ($sort === 'az') {
             $c->order = 't.en';
         }
         if ($sort === 'za') {
@@ -93,25 +92,34 @@ class Word extends ActiveRecord
         if ($sort === 'rnd') {
             $c->order = 'RAND()';
         }
-        return $c;
-    }
-
-    /**
-     * Gets the dataProvider by sort and query.
-     * @param mixed $sort null or sorting strings
-     * @param string $q searching strings
-     * @return CActiveDataProvider
-     */
-    public function findAllBySortAndQ($sort, $q = '')
-    {
-        $sort = substr($sort, 0, 3);
 
         return new CActiveDataProvider(get_class($this), array(
-            'criteria' => $this->getCriteriaBySortAndQ($sort, $q),
+            'criteria' => $c,
             'pagination' => array(
                 'pageSize' => param('wordPerPage'),
                 'pageVar' => 'page',
-                'params' => $q ? compact('q') : null,
+            ),
+        ));
+    }
+
+    /**
+     * Retrieves the list of words based on the current search conditions
+     * @param string $q searching strings
+     * @return CActiveDataProvider
+     */
+    public function search($q)
+    {
+        $c = new CDbCriteria();
+        $c->addSearchCondition('t.en', $q, true, 'OR');
+        $c->addSearchCondition('t.ja', $q, true, 'OR');
+        $c->order = 't.id DESC';
+
+        return new CActiveDataProvider(get_class($this), array(
+            'criteria' => $c,
+            'pagination' => array(
+                'pageSize' => param('wordPerPage'),
+                'pageVar' => 'page',
+                'params' => compact('q'),
             ),
         ));
     }

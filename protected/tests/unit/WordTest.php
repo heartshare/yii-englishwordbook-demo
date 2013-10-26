@@ -22,48 +22,46 @@ class WordTest extends DbTestCase
     }
 
     /**
-     * @dataProvider getCriteriaBySortAndQProvider
+     * @dataProvider findAllBySortProvider
      */
-    public function testGetCriteriaBySortAndQ($expectedParams, $expectedOrder, $sort, $q)
+    public function testFindAllBySort($expectedCount, $expectedOrder, $sort)
     {
-        $method = parent::getMethod('Word', 'getCriteriaBySortAndQ');
-        $c = $method->invokeArgs(new Word(), array($sort, $q));
-        $this->assertEquals($expectedParams, $c->params);
-        $this->assertEquals($expectedOrder, $c->order);
+        $dataProvider = Word::model()->findAllBySort($sort);
+        $this->assertEquals($expectedCount, $dataProvider->totalItemCount);
+        $this->assertEquals($expectedOrder, $dataProvider->getCriteria()->order);
     }
 
-    public function getCriteriaBySortAndQProvider()
+    public function findAllBySortProvider()
     {
         return array(
-            array(array(), 't.id DESC', null, ''),
-            array(array(), 't.id DESC', 'new', ''),
-            array(array(), 't.id DESC', uniqid(), ''),
-            array(array(), 't.en', 'az', ''),
-            array(array(), 't.en DESC', 'za', ''),
-            array(array(), 't.id', 'old', ''),
-            array(array(), 'RAND()', 'rnd', ''),
-            array(array(':ycp0' => 'a%'), 't.en', 'a', ''),
-            array(array(':ycp1' => '%a%', ':ycp2' => '%a%'), 't.en', null, 'a'),
+            array(5, 't.id DESC', null),
+            array(5, 't.id DESC', 'new'),
+            array(5, 't.id DESC', uniqid()),
+            array(5, 't.en', 'az'),
+            array(5, 't.en DESC', 'za'),
+            array(5, 't.id', 'old'),
+            array(5, 'RAND()', 'rnd'),
+            array(1, 't.en', 'a'),
+            array(0, 't.en', 'z'),
         );
     }
 
     /**
-     * @dataProvider findAllBySortAndQProvider
+     * @dataProvider searchProvider
      */
-    public function testFindAllBySortAndQ($expectedCount, $sort, $q)
+    public function testSearch($expectedCount, $q)
     {
-        $dataProvider = Word::model()->findAllBySortAndQ($sort, $q);
+        $dataProvider = Word::model()->search($q);
         $this->assertEquals($expectedCount, $dataProvider->totalItemCount);
     }
 
-    public function findAllBySortAndQProvider()
+    public function searchProvider()
     {
         return array(
-            array(5, null, ''),
-            array(1, 'a', ''),
-            array(1, '', 'a'),
-            array(1, '', 'えー'),
-            array(0, '', uniqid()),
+            array(5, null),
+            array(1, 'a'),
+            array(1, 'えー'),
+            array(0, uniqid()),
         );
     }
 }
