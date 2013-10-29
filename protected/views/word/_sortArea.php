@@ -6,5 +6,3 @@
     <?php echo l($sort, array($this->action->id, 'sort' => $sort)); ?>
     <?php endforeach; ?>
 </div><!-- /.sort-link -->
-
-<?php $this->renderPartial('_actionLink'); ?>
