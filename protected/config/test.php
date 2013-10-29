@@ -1,7 +1,7 @@
 <?php
 
 return CMap::mergeArray(
-    require(dirname(__FILE__).'/main.php'),
+    require(dirname(__FILE__) . '/main.php'),
     array(
         'components' => array(
             'fixture' => array(
@@ -9,7 +9,7 @@ return CMap::mergeArray(
             ),
             /*
             'db' => array(
-                'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/yii_englishwordbook_demo_test.sqlite3',
+                'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/yii_englishwordbook_demo_test.sqlite3',
             ),
              */
             'db' => array(

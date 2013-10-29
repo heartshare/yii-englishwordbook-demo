@@ -1,4 +1,4 @@
-<?php $this->pageTitle = $word->en.' - '.$this->pageTitle; ?>
+<?php $this->pageTitle = $word->en . ' - ' . $this->pageTitle; ?>
 <?php $this->widget('Flash'); ?>
 
 <div class="center">

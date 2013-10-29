@@ -1,5 +1,5 @@
 <?php if ($this->action->id === 'update'): ?>
-<?php $this->pageTitle = $word->en.' - '.$this->pageTitle; ?>
+<?php $this->pageTitle = $word->en . ' - ' . $this->pageTitle; ?>
 <?php endif; ?>
 
 <div class="form">

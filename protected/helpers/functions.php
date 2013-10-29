@@ -38,7 +38,7 @@ function bu($url = null) {
     if ($baseUrl === null) {
         $baseUrl = Yii::app()->getRequest()->getBaseUrl();
     }
-    return $url === null ? $baseUrl : $baseUrl.'/'.ltrim($url, '/');
+    return $url === null ? $baseUrl : $baseUrl . '/' . ltrim($url, '/');
 }
 
 function param($name) {

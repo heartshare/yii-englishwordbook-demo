@@ -39,7 +39,7 @@
 
     <div id="footer">
         <div class="center">
-            &copy; <?php echo date('Y').' '.app()->name; ?>
+            &copy; <?php echo date('Y') . ' ' . app()->name; ?>
         </div><!-- /.center -->
     </div><!-- /#footer -->
 

@@ -53,7 +53,7 @@ class Flash extends CWidget
     {
         Yii::app()->getClientScript()->registerScript(
             'flashHideAuto',
-            '$(".'.$this->prefix.$this->key.'").animate({opacity: 1.0}, 3000).fadeOut("slow");'
+            '$(".' . $this->prefix.$this->key . '").animate({opacity: 1.0}, 3000).fadeOut("slow");'
         );
     }
 }

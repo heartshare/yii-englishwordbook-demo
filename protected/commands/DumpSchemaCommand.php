@@ -28,13 +28,13 @@ EOD;
         $result = '';
 
         foreach ($tables as $table) {
-            $result.="// ".$table->name."\n";
-            $result.="\$this->createTable('".$table->name."', array(\n";
+            $result .= "// " . $table->name . "\n";
+            $result .= "\$this->createTable('" . $table->name . "', array(\n";
 
             foreach ($table->columns as $column) {
-                $result.= "    '".$column->name."' => '".$this->getColumnType($column)."',\n";
+                $result .= "    '" . $column->name . "' => '" . $this->getColumnType($column) . "',\n";
             }
-            $result.= "), \$options);\n\n";
+            $result .= "), \$options);\n\n";
         }
         echo $result;
     }
@@ -66,13 +66,13 @@ EOD;
         }
 
         if (!$column->allowNull) {
-            $result.= ' NOT NULL';
+            $result .= ' NOT NULL';
         }
         if ($column->defaultValue !== null) {
-            $result.= " DEFAULT \'{$column->defaultValue}\'";
+            $result .= " DEFAULT \'{$column->defaultValue}\'";
         }
         if ($column->comment !== '') {
-            $result.= " COMMENT \'{$column->comment}\'";
+            $result .= " COMMENT \'{$column->comment}\'";
         }
 
         return $result;

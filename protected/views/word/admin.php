@@ -11,7 +11,7 @@
     <div class="form">
         <?php echo CHtml::form(url($this->route)); ?>
         <?php echo CHtml::textField('q', $q); ?>
-        <?php echo CHtml::imageButton(bu().'/images/search.png', array('value' => 'Search')); ?>
+        <?php echo CHtml::imageButton(bu() . '/images/search.png', array('value' => 'Search')); ?>
         <?php echo CHtml::endForm(); ?>
     </div><!-- /.form -->
 </div><!-- /.right -->

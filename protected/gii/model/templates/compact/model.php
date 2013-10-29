@@ -57,7 +57,7 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
      * @param string $className active record class name.
      * @return <?php echo $modelClass; ?>|CActiveRecord active record model instance.
      */
-    public static function model($className=__CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }

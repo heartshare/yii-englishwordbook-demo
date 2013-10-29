@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+    'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'English Wordbook Yii Framework',
     'language' => 'ja',
     'defaultController' => 'word',
@@ -39,7 +39,7 @@ return array(
         ),
         /*
         'db' => array(
-            'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/yii_englishwordbook_demo.sqlite3',
+            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/yii_englishwordbook_demo.sqlite3',
         ),
          */
         'db' => array(
