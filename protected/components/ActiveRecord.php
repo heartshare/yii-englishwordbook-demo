@@ -26,22 +26,5 @@ class ActiveRecord extends CActiveRecord
         }
         return parent::beforeSave();
     }
-
-    /**
-     * Gets the pagination.
-     * @param CDbCriteria $c
-     * @param integer $pageSize number of items in each page
-     * @param string $q the query strings
-     * @return CPagination custom pagination
-     */
-    public function getPages($c, $pageSize = 10, $q = '')
-    {
-        $pages = new CPagination($this->count($c));
-        $pages->pageSize = $pageSize;
-        $pages->applyLimit($c);
-        $pages->params = $q ? compact('q') : null;
-
-        return $pages;
-    }
 }
 
