@@ -42,7 +42,7 @@ body {
     background: #fff;
     text-align: left;
 }
-#header {
+header {
     padding: 10px 20px;
     margin-bottom: 10px;
     background-color: #fafafa;
@@ -52,7 +52,7 @@ body {
     font-size: 140%;
     font-weight: bold;
 }
-#footer {
+footer {
     font-size: 88%;
     padding: 12px 20px;
     text-align: center;
@@ -60,10 +60,10 @@ body {
     border-top: 1px solid #eee;
     font-weight: bold;
 }
-#footer ul {
+footer ul {
     display: inline;
 }
-#footer ul li {
+footer ul li {
     display: inline;
     padding-right: 3px;
 }

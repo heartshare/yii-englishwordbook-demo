@@ -7,4 +7,4 @@
 
 <div class="error">
     <?php echo h($message); ?>
-</div>
+</div><!-- /.error -->
