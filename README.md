@@ -14,7 +14,7 @@ Yii のコアファイルは [Composer](http://getcomposer.org/) でインスト
 コマンドラインでプロジェクトルートまで移動して以下を実行します。
 
 ```
-composer install
+composer install --dev
 ```
 
 Composer では Yii と PHPUnit などがインストールされます。  
