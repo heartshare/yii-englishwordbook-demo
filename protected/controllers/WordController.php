@@ -41,18 +41,27 @@ class WordController extends Controller
     }
 
     /**
-     * Lists all words and creates a new word.
+     * Manages the words.
      * @param mixed $sort null or sorting strings
      */
-    public function actionEdit($sort = null)
+    public function actionAdmin($sort = null)
+    {
+        $word = new Word();
+        $q = mb_trim(req()->getParam('q'));
+        $dataProvider = $q !== '' ? $word->search($q) : $word->findAllBySort($sort);
+
+        $this->render('admin', compact('q', 'dataProvider'));
+    }
+
+    /**
+     * Creates a new word.
+     */
+    public function actionCreate()
     {
         $word = new Word();
         $this->save($word, '英単語の追加が完了いたしました。');
 
-        $q = mb_trim(req()->getParam('q'));
-        $dataProvider = $q !== '' ? $word->search($q) : $word->findAllBySort($sort);
-
-        $this->render('edit', compact('word', 'q', 'dataProvider'));
+        $this->render('_form', compact('word'));
     }
 
     /**
@@ -83,7 +92,7 @@ class WordController extends Controller
         $this->loadModel()->delete();
 
         user()->setFlash('success', '英単語の削除が完了いたしました。');
-        $this->redirect(array('edit'));
+        $this->redirect(array('admin'));
     }
 }
 
