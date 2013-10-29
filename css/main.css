@@ -74,6 +74,18 @@ body {
     padding: 5px 20px;
 }
 
+/* Menu */
+.menu li {
+    display: inline;
+    padding: 0 2px;
+    font-weight: bold;
+    text-align: right;
+}
+.menu .active a {
+    color: #555;
+    text-decoration: underline;
+}
+
 /* Links */
 a {
     text-decoration: none;
@@ -169,9 +181,6 @@ h2 {
 .sort-link {
     text-align: left;
     float: left;
-}
-.action-link {
-    text-align: center;
 }
 .flash-error, .flash-notice, .flash-success {
     padding: .8em;
