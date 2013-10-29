@@ -10,7 +10,7 @@ class WebTestCase extends CWebTestCase
     const USERNAME = 'admin';
     const PASSWORD = 'adminadmin';
     const LOGIN_BUTTON = 'ログイン';
-    const LOGOUT_BUTTON = 'ログアウト';
+    const LOGOUT_BUTTON = 'Logout (admin)';
 
     protected function setUp()
     {
