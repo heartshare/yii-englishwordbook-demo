@@ -20,21 +20,24 @@
 
     <div id="main">
         <div class="inner">
+            <div class="menu">
+                <?php $this->widget('zii.widgets.CMenu', array(
+                    'items' => array(
+                        array('label' => 'Home', 'url' => array('/word/index')),
+                        array('label' => 'Admin', 'url' => array('/word/admin'), 'visible' => !user()->isGuest),
+                        array('label' => 'Create', 'url' => array('/word/create'), 'visible' => !user()->isGuest),
+                        array('label' => 'About', 'url' => array('/site/about')),
+                        array('label' => 'Login', 'url' => array('/site/login'), 'visible' => user()->isGuest),
+                        array('label' => 'Logout (' . user()->name . ')', 'url' => array('/site/logout'), 'visible' => !user()->isGuest),
+                    ),
+                )); ?>
+            </div><!-- /.menu -->
+            <p class="line"></p>
             <?php echo $content; ?>
-            <?php if (user()->id): ?>
-            <div class="right">
-                <?php echo h(user()->name); ?>
-                <?php echo l('ログアウト', array('/site/logout')); ?>
-            </div><!-- /.right -->
-            <?php endif; ?>
-        </div>
+        </div><!-- /.inner -->
     </div><!-- /#main -->
 
     <div id="footer">
-        <ul>
-            <li><?php echo l('ホーム', array('/word/index')); ?></li>
-            <li><?php echo l('このサイトについて', array('/site/about')); ?></li>
-        </ul>
         <div class="center">
             &copy; <?php echo date('Y').' '.app()->name; ?>
         </div><!-- /.center -->
