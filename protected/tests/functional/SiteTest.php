@@ -19,7 +19,7 @@ class SiteTest extends WebTestCase
         // test login
         $this->login('', '');
         $this->assertTextPresent('ログイン情報が正しくありません。');
-        
+
         $this->login(WebTestCase::USERNAME, '');
         $this->assertTextPresent('ログイン情報が正しくありません。');
 
