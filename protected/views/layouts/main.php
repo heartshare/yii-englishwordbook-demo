@@ -10,36 +10,34 @@
 <body>
 <div id="container">
 
-    <header>
+    <header id="header">
         <div id="logo">
             <?php echo app()->name . Yii::getVersion(); ?>
         </div><!-- /#logo -->
-    </header><!-- /header -->
+    </header><!-- /#header -->
 
     <div id="main">
-        <div class="inner">
-            <div class="menu">
-                <?php $this->widget('zii.widgets.CMenu', array(
-                    'items' => array(
-                        array('label' => 'Home', 'url' => array('/word/index')),
-                        array('label' => 'Admin', 'url' => array('/word/admin'), 'visible' => !user()->isGuest),
-                        array('label' => 'Create', 'url' => array('/word/create'), 'visible' => !user()->isGuest),
-                        array('label' => 'About', 'url' => array('/site/about')),
-                        array('label' => 'Login', 'url' => array('/site/login'), 'visible' => user()->isGuest),
-                        array('label' => 'Logout (' . user()->name . ')', 'url' => array('/site/logout'), 'visible' => !user()->isGuest),
-                    ),
-                )); ?>
-            </div><!-- /.menu -->
-            <hr>
-            <?php echo $content; ?>
-        </div><!-- /.inner -->
+        <div class="menu">
+            <?php $this->widget('zii.widgets.CMenu', array(
+                'items' => array(
+                    array('label' => 'Home', 'url' => array('/word/index')),
+                    array('label' => 'Admin', 'url' => array('/word/admin'), 'visible' => !user()->isGuest),
+                    array('label' => 'Create', 'url' => array('/word/create'), 'visible' => !user()->isGuest),
+                    array('label' => 'About', 'url' => array('/site/about')),
+                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => user()->isGuest),
+                    array('label' => 'Logout (' . user()->name . ')', 'url' => array('/site/logout'), 'visible' => !user()->isGuest),
+                ),
+            )); ?>
+        </div><!-- /.menu -->
+        <hr>
+        <?php echo $content; ?>
     </div><!-- /#main -->
 
-    <footer>
+    <footer id="footer">
         <div class="center">
             &copy; <?php echo date('Y') . ' ' . app()->name; ?>
         </div><!-- /.center -->
-    </footer><!-- /footer -->
+    </footer><!-- /#footer -->
 
 </div><!-- /#container -->
 </body>
