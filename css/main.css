@@ -168,8 +168,9 @@ h2 {
     font-size: 143%;
     margin-bottom: 5px;
 }
-.line {
+hr {
     margin: 10px 0;
+    border: 0;
     border-bottom: 1px dotted #ccc;
 }
 .right {

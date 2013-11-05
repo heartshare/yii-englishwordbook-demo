@@ -30,7 +30,7 @@
                     ),
                 )); ?>
             </div><!-- /.menu -->
-            <p class="line"></p>
+            <hr>
             <?php echo $content; ?>
         </div><!-- /.inner -->
     </div><!-- /#main -->

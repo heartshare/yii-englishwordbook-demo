@@ -25,7 +25,7 @@
     <p>以下の 2 つのアカウントでログインできます。</p>
     <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin<br>
     <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin<br>
-    <p class="line"></p>
+    <hr>
     <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo<br>
     <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo<br>
 </div><!-- /.info -->
