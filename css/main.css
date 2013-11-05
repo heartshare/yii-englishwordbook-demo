@@ -20,7 +20,8 @@ tbody, tfoot, thead, table, label, tr, th, td {
 html {
     overflow-y: scroll;
 }
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 p {
@@ -90,21 +91,26 @@ footer ul li {
 a {
     text-decoration: none;
 }
-a:link, a:visited {
+a:link,
+a:visited {
     color: #bbb;
 }
-a:hover, a:active {
+a:hover,
+a:active {
     color: #555;
 }
-a:link.hide, a:visited.hide {
+a:link.hide,
+a:visited.hide {
     color: #fff;
 }
-a:hover.hide, a:active.hide {
+a:hover.hide,
+a:active.hide {
     color: #bbb;
 }
 
 /* Forms */
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
     width: 170px;
 }
 input[type="submit"] {
@@ -140,7 +146,8 @@ input[type="submit"] {
 }
 
 /* Words */
-.words, .words-hide {
+.words,
+.words-hide {
     padding: 10px 20px;
     line-height: 1.5;
 }
@@ -155,10 +162,12 @@ input[type="submit"] {
 .word + span {
     font-weight: bold;
 }
-.words a:link, .words a:visited {
+.words a:link,
+.words a:visited {
     color: #fff;
 }
-.words a:hover, .words a:active {
+.words a:hover,
+.words a:active {
     color: #bbb;
 }
 
@@ -183,7 +192,9 @@ hr {
     text-align: left;
     float: left;
 }
-.flash-error, .flash-notice, .flash-success {
+.flash-error,
+.flash-notice,
+.flash-success {
     padding: .8em;
     margin-bottom: 1em;
     border: 1px dotted #ddd;
@@ -232,7 +243,8 @@ hr {
 .pager li {
     display: inline;
 }
-.pager a:link, .pager a:visited {
+.pager a:link,
+.pager a:visited {
     color: #b0b0b0;
     padding: 1px 2px;
 }
@@ -249,6 +261,7 @@ hr {
 .pager .hidden a {
     color: #555;
 }
-.pager .first, .pager .last {
+.pager .first,
+.pager .last {
     display: none;
 }
