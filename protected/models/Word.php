@@ -112,7 +112,7 @@ class Word extends ActiveRecord
         $c = new CDbCriteria();
         $c->addSearchCondition('t.en', $q, true, 'OR');
         $c->addSearchCondition('t.ja', $q, true, 'OR');
-        $c->order = 't.id DESC';
+        $c->order = 't.en';
 
         return new CActiveDataProvider(get_class($this), array(
             'criteria' => $c,
