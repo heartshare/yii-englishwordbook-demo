@@ -223,7 +223,7 @@ hr {
     border: 1px dotted #aaa;
 }
 
-/* pager */
+/* Pagination */
 .pager {
     display: inline;
     line-height: 100%;
@@ -245,7 +245,7 @@ hr {
 }
 .pager .selected a {
     color: #555;
-    font-weight:bold;
+    font-weight: bold;
 }
 .pager .hidden a {
     color: #555;
