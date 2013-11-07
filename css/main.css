@@ -65,13 +65,13 @@ body {
 }
 
 /* Menu */
-.menu li {
+#menu li {
     display: inline;
     padding: 0 2px;
     text-align: right;
     font-weight: bold;
 }
-.menu .active a {
+#menu .active a {
     color: #555;
     text-decoration: underline;
 }
