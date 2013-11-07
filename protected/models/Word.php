@@ -93,7 +93,7 @@ class Word extends ActiveRecord
             $c->order = 'RAND()';
         }
 
-        return new CActiveDataProvider(get_class($this), array(
+        return new CActiveDataProvider($this, array(
             'criteria' => $c,
             'pagination' => array(
                 'pageSize' => param('wordPerPage'),
@@ -114,7 +114,7 @@ class Word extends ActiveRecord
         $c->addSearchCondition('t.ja', $q, true, 'OR');
         $c->order = 't.en';
 
-        return new CActiveDataProvider(get_class($this), array(
+        return new CActiveDataProvider($this, array(
             'criteria' => $c,
             'pagination' => array(
                 'pageSize' => param('wordPerPage'),
