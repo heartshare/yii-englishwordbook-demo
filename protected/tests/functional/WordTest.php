@@ -23,7 +23,7 @@ class WordTest extends WebTestCase
 
         // test search form
         $this->type('name=q', '　　a　');
-        $this->clickAndWait("//input[@value='Search']");
+        $this->clickAndWait('css=.search-ico');
         $this->assertValue('name=q', 'a');
         $this->assertTextPresent('1 results');
         $this->assertTextPresent($this->words['Word_1']['en']);

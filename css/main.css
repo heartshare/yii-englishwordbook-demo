@@ -133,6 +133,14 @@ input[type="submit"] {
 .form .errorSummary li {
     padding: 0 0 0 10px;
 }
+.search-ico {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background-color: #fff;
+    background-image: url("../images/search.png");
+    cursor: pointer;
+}
 
 /* Word */
 .words,

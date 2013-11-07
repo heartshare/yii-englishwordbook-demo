@@ -43,11 +43,12 @@ class WordController extends Controller
     /**
      * Manages the words.
      * @param mixed $sort null or sorting strings
+     * @param string $q searching strings
      */
-    public function actionAdmin($sort = null)
+    public function actionAdmin($sort = null, $q = null)
     {
         $word = new Word();
-        $q = mb_trim(req()->getParam('q'));
+        $q = mb_trim($q);
         $dataProvider = $q !== '' ? $word->search($q) : $word->findAllBySort($sort);
 
         $this->render('admin', compact('q', 'dataProvider'));
