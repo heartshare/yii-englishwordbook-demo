@@ -1,0 +1,21 @@
+/* general */
+body {
+  color: #555;
+  background: #f5f5f5;
+  font:  normal 13px "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* link */
+a {
+  text-decoration: none;
+  &:link,
+  &:visited {
+    color: blue;
+  }
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}

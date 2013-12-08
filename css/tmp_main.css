@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* general */
+body {
+  color: #555;
+  background: #f5f5f5;
+  font: normal 13px "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* link */
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: blue;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+/* alert */
+.alert {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid transparent;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-warning {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+/* text-align */
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* pager */
+.pager {
+  margin: 10px;
+  text-align: center;
+}
+
+.pager li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.pager a {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #888;
+  border: 1px solid #e1e1e1;
+  text-decoration: none;
+}
+.pager a:hover {
+  background-color: #fafafa;
+}
+
+.pager .current {
+  padding: 5px 10px;
+  color: #888;
+  background-color: #eee;
+  border: 1px solid #e1e1e1;
+}
+
+/* form general */
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 178px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: 1px solid #aaa;
+}
+
+/* form group */
+.form .row {
+  margin-bottom: 20px;
+}
+.form form label {
+  display: block;
+}
+.form input + label {
+  display: inline-block;
+  vertical-align: text-top;
+  position: relative\9;
+  top: -2px\9;
+  left: 0\9;
+}
+
+/* form placeholder */
+.placeholder {
+  color: #aaa;
+}
+
+/* button */
+.btn {
+  height: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: middle;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn-a {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.btn-a:hover {
+  background-color: #417ab9;
+}
+
+.btn-b {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-b:hover {
+  background-color: #c32e29;
+}

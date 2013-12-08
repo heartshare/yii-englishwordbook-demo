@@ -1,0 +1,37 @@
+/* text-align */
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+/* pager */
+.pager {
+  margin: 10px;
+  text-align: center;
+}
+.pager li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.pager a {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #888;
+  //background-color: #eee;
+  border: 1px solid darken(#eee, 5%);
+  text-decoration: none;
+  &:hover {
+    background-color: #fafafa;
+  }
+}
+.pager .current {
+  padding: 5px 10px;
+  color: #888;
+  background-color: #eee;
+  border: 1px solid darken(#eee, 5%);
+}

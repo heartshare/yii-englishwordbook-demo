@@ -1,0 +1,32 @@
+/* form general */
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 178px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: 1px solid #aaa;
+}
+
+/* form group */
+.form {
+  .row {
+    margin-bottom: 20px;
+  }
+  form label {
+    display: block;
+  }
+  input + label {
+    display: inline-block;
+    vertical-align: text-top;
+    position: relative\9;
+    top: -2px\9;
+    left: 0\9;
+  }
+}
+
+/* form placeholder */
+.placeholder {
+  color: #aaa;
+}
