@@ -1,7 +1,7 @@
 /* general */
 body {
   color: #555;
-  background: #f5f5f5;
+  background: #f5f5f5 image-url("bg.png");
   font:  normal 13px "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.4;
   letter-spacing: 0;
@@ -12,10 +12,18 @@ a {
   text-decoration: none;
   &:link,
   &:visited {
-    color: blue;
+    color: #bbb;
   }
   &:hover,
   &:active {
-    text-decoration: underline;
+    color: #555;
+  }
+  &:link.hide,
+  &:visited.hide {
+    color: #fff;
+  }
+  &:hover.hide,
+  &:active.hide {
+    color: #bbb;
   }
 }

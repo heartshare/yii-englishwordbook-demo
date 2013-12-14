@@ -1,0 +1,28 @@
+/* layout */
+#container {
+    width: 650px;
+    margin: 10px auto;
+    background: #fff;
+}
+#header {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+}
+#logo {
+    font-size: 140%;
+    font-weight: bold;
+}
+#footer {
+    padding: 12px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    font-size: 88%;
+    background-color: #fafafa;
+}
+#main {
+    margin-bottom: 10px;
+    padding: 5px 20px;
+}
