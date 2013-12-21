@@ -10,7 +10,7 @@ class Flash extends CWidget
     /**
      * @var prefix of class selector.
      */
-    public $prefix = 'flash-';
+    public $prefix = 'alert alert-';
 
     /**
      * @var string key identifying the flash message.

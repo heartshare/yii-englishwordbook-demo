@@ -17,7 +17,7 @@
     </div><!-- /.row -->
 
     <div class="row">
-        <?php echo CHtml::submitButton($word->isNewRecord ? '登録する' : '更新する'); ?>
+        <?php echo CHtml::submitButton($word->isNewRecord ? '登録する' : '更新する', array('class' => 'btn')); ?>
     </div><!-- /.row -->
 
     <?php echo CHtml::endForm(); ?>

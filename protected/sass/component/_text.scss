@@ -1,4 +1,4 @@
-/* text-align */
+/* text align */
 .text-left {
   text-align: left;
 }
@@ -9,29 +9,29 @@
   text-align: center;
 }
 
-/* pager */
+/* text pager */
 .pager {
-  margin: 10px;
-  text-align: center;
+  display: inline;
+  margin: 10px 0;
 }
 .pager li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .pager a {
   display: inline-block;
-  padding: 5px 10px;
-  color: #888;
-  //background-color: #eee;
-  border: 1px solid darken(#eee, 5%);
+  color: #aaa;
+  font-weight: normal;
   text-decoration: none;
-  &:hover {
-    background-color: #fafafa;
+}
+.pager .selected {
+  font-weight: bold;
+  font-size: 110%;
+  a {
+    color: #555;
   }
 }
-.pager .current {
-  padding: 5px 10px;
-  color: #888;
-  background-color: #eee;
-  border: 1px solid darken(#eee, 5%);
+.pager .first,
+.pager .last {
+  display: none;
 }

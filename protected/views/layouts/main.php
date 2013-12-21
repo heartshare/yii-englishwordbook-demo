@@ -6,7 +6,6 @@
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><![endif]-->
     <!--[if lt IE 9]><script src="<?php echo bu(); ?>/js/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/main.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/tmp_main.css"> -->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo bu(); ?>/favicon.ico">
     <title><?php echo h($this->pageTitle); ?></title>
 </head>
@@ -14,14 +13,14 @@
 <div id="container">
 
     <header id="header">
-        <div id="logo">
+        <div id="header-logo">
             <?php echo app()->name . Yii::getVersion(); ?>
-        </div><!-- /#logo -->
+        </div><!-- /#header-logo -->
     </header><!-- /#header -->
 
     <div id="main">
         <?php $this->widget('zii.widgets.CMenu', array(
-            'id' => 'menu',
+            'id' => 'main-menu',
             'items' => array(
                 array('label' => 'Home', 'url' => array('/word/index')),
                 array('label' => 'Admin', 'url' => array('/word/admin'), 'visible' => !user()->isGuest),

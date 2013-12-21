@@ -13,7 +13,7 @@
     </div><!-- /.row -->
 
     <div class="row">
-        <?php echo CHtml::submitButton('ログイン'); ?>
+        <?php echo CHtml::submitButton('ログイン', array('class' => 'btn')); ?>
         <?php echo CHtml::activeCheckBox($loginForm, 'rememberMe'); ?>
         <?php echo CHtml::activeLabel($loginForm, 'rememberMe'); ?>
     </div><!-- /.row -->
@@ -21,8 +21,9 @@
     <?php echo CHtml::endForm(); ?>
 </div><!-- /.form -->
 
-<div class="info">
-    <p>以下の 2 つのアカウントでログインできます。</p>
+<div class="alert alert-info">
+    以下の 2 つのアカウントでログインできます。
+    <hr>
     <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin<br>
     <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin<br>
     <hr>

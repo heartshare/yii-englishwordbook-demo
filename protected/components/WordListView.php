@@ -12,7 +12,7 @@ class WordListView extends CListView
     public $enableHistory = true;
     public $ajaxVar = '';
     public $template = '{summary}{pager}{items}';
-    public $pagerCssClass = 'center';
+    public $pagerCssClass = 'text-center';
 
     public $pager = array(
         'class' => 'LinkPager',

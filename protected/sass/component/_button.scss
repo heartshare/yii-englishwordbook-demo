@@ -1,4 +1,9 @@
 /* button */
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  margin: 0;
+}
 .btn {
   height: 24px;
   padding-left: 15px;
@@ -7,6 +12,7 @@
   background-color: #eee;
   border: 1px solid #aaa;
   cursor: pointer;
+  font-weight: bold;
   &:hover {
     background-color: #ddd;
   }
@@ -27,11 +33,9 @@
     background-color: #c32e29;
   }
 }
-.search-ico {
-    width: 16px;
-    height: 16px;
-    border: 0;
-    background-color: #fff;
-    background-image: url("../images/ico-search.png");
-    cursor: pointer;
+.btn-search {
+  position: relative;
+  top: 0;
+  left: -7px;
+  background: #eee image-url("ico-search.png") center center no-repeat;
 }

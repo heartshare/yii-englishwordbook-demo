@@ -1,132 +1,46 @@
-/* menu */
-#menu li {
-    display: inline;
-    padding: 0 2px;
-    text-align: right;
-    font-weight: bold;
-}
-#menu .active a {
-    color: #555;
-    text-decoration: underline;
+/* main header */
+#header-logo {
+  font-size: 140%;
+  font-weight: bold;
 }
 
-/* word */
+/* main menu */
+#main-menu li {
+  display: inline;
+  padding: 0 2px;
+  text-align: right;
+  font-weight: bold;
+}
+#main-menu .active a {
+  color: #555;
+  text-decoration: underline;
+}
+
+/* main word */
 .words,
 .words-hide {
-    padding: 10px 20px;
-    line-height: 1.5;
+  padding: 20px 10px 10px 10px;
+  line-height: 1.5;
+  font-weight: bold;
 }
 .words-hide {
-    color: #fff;
+  color: #fff;
 }
 .word {
-    margin-right: 10px;
-    color: #555;
-    font-weight: bold;
-}
-.word + span {
-    font-weight: bold;
+  margin-right: 10px;
+  color: #555;
 }
 .words a:link,
 .words a:visited {
-    color: #fff;
+  color: #fff;
 }
 .words a:hover,
 .words a:active {
-    color: #bbb;
+  color: #bbb;
 }
 
-/* other */
-h2 {
-    margin-bottom: 5px;
-    font-weight: 700;
-    font-size: 143%;
-}
-hr {
-    margin: 10px 0;
-    border: 0;
-    border-bottom: 1px dotted #ccc;
-}
-.right {
-    text-align: right;
-}
-.center {
-    text-align: center;
-}
+/* main etc */
 .sort-link {
-    float: left;
-    text-align: left;
-}
-.flash-error,
-.flash-notice,
-.flash-success {
-    margin-bottom: 1em;
-    padding: .8em;
-    border: 1px dotted #ddd;
-}
-.flash-error {
-    background: #fee;
-    color: #dc143c;
-    border-color: #ffb6c1;
-}
-.flash-error a {
-    color: #f09595;
-}
-.flash-error a:hover {
-    color: #dc143c;
-}
-.flash-notice {
-    background: #fff6bf;
-    color: #514721;
-    border-color: #ffd324;
-}
-.flash-success {
-    background: #e6efc2;
-    color: #3a551a;
-    border-color: #b5a77F;
-}
-.flash-success a {
-    color: #6d884d;
-}
-.flash-success a:hover {
-    color: #3a551a;
-}
-.info {
-    margin: 10px 0;
-    padding: 10px;
-    background: #f0f0f0;
-    color: #555;
-    border: 1px dotted #aaa;
-}
-
-/* pager */
-.pager {
-    display: inline;
-    line-height: 100%;
-    font-size: 13px;
-}
-.pager li {
-    display: inline;
-}
-.pager a:link,
-.pager a:visited {
-    padding: 1px 2px;
-    color: #b0b0b0;
-}
-.pager .page a {
-    font-weight: normal;
-}
-.pager a:hover {
-    color: #555;
-}
-.pager .selected a {
-    color: #555;
-    font-weight: bold;
-}
-.pager .hidden a {
-    color: #555;
-}
-.pager .first,
-.pager .last {
-    display: none;
+  float: left;
+  text-align: left;
 }
