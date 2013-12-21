@@ -1,5 +1,5 @@
 <?php cs()->registerScriptFile(bu() . '/js/jquery.placeholder.js', CClientScript::POS_END); ?>
-<?php cs()->registerScript('placeholder', "$('input').placeholder();"); ?>
+<?php cs()->registerScript('placeholder', "$('#q').placeholder();"); ?>
 
 <?php $this->widget('Flash'); ?>
 <?php $this->renderPartial('_sortArea'); ?>
