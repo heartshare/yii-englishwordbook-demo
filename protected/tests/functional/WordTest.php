@@ -41,6 +41,7 @@ class WordTest extends WebTestCase
         $this->type('name=Word[en]', '　　hello　');
         $this->type('name=Word[ja]', '　　こんにちは　');
         $this->clickAndWait("//input[@value='登録する']");
+        $this->assertLocation(TEST_BASE_URL . 'word/*');
         $this->assertTextPresent('英単語の追加が完了いたしました。');
         $this->assertTextNotPresent('　　hello　');
         $this->assertTextNotPresent('　　こんにちは　');
@@ -50,7 +51,7 @@ class WordTest extends WebTestCase
 
     public function testView()
     {
-        $this->open('word/1');
+        $this->open('word/' . $this->words['Word_1']['id']);
         $this->login();
 
         // test 404 error
@@ -58,14 +59,14 @@ class WordTest extends WebTestCase
         $this->assertTextPresent('データがありません。');
 
         // test view
-        $this->open('word/1');
+        $this->open('word/' . $this->words['Word_1']['id']);
         $this->assertTextPresent($this->words['Word_1']['en']);
         $this->assertTextPresent($this->words['Word_1']['ja']);
     }
 
     public function testUpdate()
     {
-        $this->open('word/update/1');
+        $this->open('word/update/' . $this->words['Word_1']['id']);
         $this->login();
 
         // test 404 error
@@ -73,7 +74,7 @@ class WordTest extends WebTestCase
         $this->assertTextPresent('データがありません。');
 
         // test update form
-        $this->open('word/update/1');
+        $this->open('word/update/' . $this->words['Word_1']['id']);
         $this->assertValue('name=Word[en]', $this->words['Word_1']['en']);
         $this->assertValue('name=Word[ja]', $this->words['Word_1']['ja']);
 
@@ -85,9 +86,9 @@ class WordTest extends WebTestCase
 
         $this->type('name=Word[en]', '　　hello　');
         $this->type('name=Word[ja]', '　　こんにちは　');
-
         $this->clickAndWait("//input[@value='更新する']");
-        $this->assertLocation(TEST_BASE_URL.'word/1');
+
+        $this->assertLocation(TEST_BASE_URL . 'word/' . $this->words['Word_1']['id']);
         $this->assertTextPresent('英単語の更新が完了いたしました。');
         $this->assertTextNotPresent('　　hello　');
         $this->assertTextNotPresent('　　こんにちは　');
@@ -101,7 +102,7 @@ class WordTest extends WebTestCase
         $this->login();
 
         // test 400 error
-        $this->open('word/delete/5');
+        $this->open('word/delete/' . $this->words['Word_5']['id']);
         $this->assertTextPresent('無効なリクエストです。');
 
         // test delete
@@ -111,7 +112,7 @@ class WordTest extends WebTestCase
 
         $this->clickAndWait('link=Delete');
         $this->assertConfirmation(param('confirmDelete'));
-        $this->assertLocation(TEST_BASE_URL.'word/admin');
+        $this->assertLocation(TEST_BASE_URL . 'word/admin');
         $this->assertTextPresent('英単語の削除が完了いたしました。');
         $this->assertTextPresent('4 results');
         $this->assertTextNotPresent($this->words['Word_5']['en']);
