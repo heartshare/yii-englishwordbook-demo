@@ -6,7 +6,7 @@
 
 <?php $this->widget('WordListView', array(
     'dataProvider' => $dataProvider,
-    'itemView' => '_listEdit',
+    'itemView' => '_listAdmin',
     'itemsCssClass' => 'words',
 )); ?>
 
