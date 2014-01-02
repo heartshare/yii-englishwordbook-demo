@@ -1,6 +1,6 @@
 <?php
 
-class WordTest extends DbTestCase
+class WordTest extends CDbTestCase
 {
     public $fixtures = array(
         'words' => 'Word',
