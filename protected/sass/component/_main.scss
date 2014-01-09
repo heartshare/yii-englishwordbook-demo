@@ -6,9 +6,10 @@
 
 /* main menu */
 #main-menu li {
-  display: inline;
-  padding: 0 2px;
-  text-align: right;
+  display: table-cell;
+  *display: inline;
+  *zoom: 1;
+  padding-right: 8px;
   font-weight: bold;
 }
 #main-menu .active a {
