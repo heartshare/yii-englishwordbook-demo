@@ -297,8 +297,6 @@ input[type=submit] {
 /* main menu */
 #main-menu li {
   display: table-cell;
-  *display: inline;
-  *zoom: 1;
   padding-right: 8px;
   font-weight: bold;
 }
