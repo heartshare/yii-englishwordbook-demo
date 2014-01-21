@@ -5,22 +5,22 @@
   border: 1px solid transparent;
 }
 .alert-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border: 1px dotted #ebccd1;
+  color: $error-color;
+  background-color: $error-bg-color;
+  border: $alert-bd-width $alert-bd-style $error-bd-color;
 }
 .alert-warning {
-  color: #c09853;
-  background-color: #fcf8e3;
-  border: 1px dotted #faebcc;
+  color: $warning-color;
+  background-color: $warning-bg-color;
+  border: $alert-bd-width $alert-bd-style $warning-bd-color;
 }
 .alert-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border: 1px dotted #d6e9c6;
+  color: $success-color;
+  background-color: $success-bg-color;
+  border: $alert-bd-width $alert-bd-style $success-bd-color;
 }
 .alert-info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border: 1px dotted #bce8f1;
+  color: $info-color;
+  background-color: $info-bg-color;
+  border: $alert-bd-width $alert-bd-style $info-bd-color;
 }

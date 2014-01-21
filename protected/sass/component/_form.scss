@@ -18,9 +18,9 @@ input[type=password] {
   .errorSummary {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px dotted #ffb6c1;
-    color: #dc143c;
-    background-color: #fee;
+    border: $alert-bd-width $alert-bd-style $error-bd-color;
+    color: $error-color;
+    background-color: $error-bg-color;
     li {
       padding: 0 0 0 10px;
     }
