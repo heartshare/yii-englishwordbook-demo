@@ -166,8 +166,7 @@ hr {
 
 /* text pager */
 .pager {
-  display: inline;
-  margin: 10px 0;
+  display: inline-block;
 }
 
 .pager li {
@@ -176,7 +175,6 @@ hr {
 }
 
 .pager a {
-  display: inline-block;
   color: #aaa;
   font-weight: normal;
   text-decoration: none;
