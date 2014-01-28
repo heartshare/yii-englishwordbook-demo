@@ -6,10 +6,16 @@ class WordTest extends WebTestCase
         'words' => 'Word',
     );
 
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->start();
+        $this->login();
+    }
+
     public function testIndex()
     {
         $this->open('word/index');
-        $this->login();
         $this->assertTextPresent('5 results');
         $this->checkSortArea();
     }
@@ -17,7 +23,6 @@ class WordTest extends WebTestCase
     public function testAdmin()
     {
         $this->open('word/index');
-        $this->login();
         $this->clickAndWait('link=Admin');
         $this->assertTextPresent('5 results');
         $this->checkSortArea();
@@ -34,7 +39,6 @@ class WordTest extends WebTestCase
     public function testCreate()
     {
         $this->open('word/index');
-        $this->login();
         $this->clickAndWait('link=Create');
 
         $this->clickAndWait("//input[@value='登録する']");
@@ -58,7 +62,6 @@ class WordTest extends WebTestCase
     public function testView()
     {
         $this->open('word/' . $this->words['Word_1']['id']);
-        $this->login();
         $this->assertTextPresent($this->words['Word_1']['en']);
         $this->assertTextPresent($this->words['Word_1']['ja']);
 
@@ -70,7 +73,6 @@ class WordTest extends WebTestCase
     public function testUpdate()
     {
         $this->open('word/admin');
-        $this->login();
         $this->clickAndWait('link=Update');
         $this->assertValue('Word[en]', $this->words['Word_5']['en']);
         $this->assertValue('Word[ja]', $this->words['Word_5']['ja']);
@@ -105,7 +107,6 @@ class WordTest extends WebTestCase
     public function testDelete()
     {
         $this->open('word/admin');
-        $this->login();
         $this->assertTextPresent('5 results');
         $this->assertTextPresent($this->words['Word_5']['en']);
         $this->assertTextPresent($this->words['Word_5']['ja']);
