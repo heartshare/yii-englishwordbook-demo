@@ -48,7 +48,7 @@ class WordTest extends WebTestCase
         $this->type('Word[en]', 'hello');
         $this->type('Word[ja]', 'こんにちは');
         $this->clickAndWait("//input[@value='登録する']");
-        $this->assertLocation(TEST_BASE_URL . 'word/[1-9][0-9]*');
+        $this->assertLocation(TEST_BASE_URL . 'word/[0-9]+');
         $this->assertTextPresent('英単語の追加が完了いたしました。');
         $this->assertTextPresent('hello');
         $this->assertTextPresent('こんにちは');
