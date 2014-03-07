@@ -13,9 +13,16 @@ class WordListView extends CListView
     public $ajaxVar = '';
     public $template = '{summary}{pager}{items}';
     public $pagerCssClass = 'text-center';
+    public $loadingCssClass = '';
 
     public $pager = array(
         'class' => 'LinkPager',
     );
+
+    public function init()
+    {
+        $this->itemView = '_list' . ucfirst($this->getOwner()->getAction()->getId());
+        parent::init();
+    }
 }
 
