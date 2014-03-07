@@ -29,7 +29,7 @@ class m130726_123900_init extends CDbMigration
         ), $options);
 
         $this->addForeignKey('fk_word_user_id', 'word', 'user_id', 'user', 'id', 'CASCADE', 'CASCADE');
-        $this->createIndex('word_en_user_id', 'word', 'en, user_id');
+        $this->createIndex('word_en_user_id', 'word', 'user_id, en');
     }
 
     public function safeDown()
