@@ -10,10 +10,8 @@ class LinkPager extends CLinkPager
      */
     public function init()
     {
-        $this->firstPageLabel = '&laquo;&laquo;';
-        $this->prevPageLabel = '&laquo;';
-        $this->nextPageLabel = '&raquo;';
-        $this->lastPageLabel = '&raquo;&raquo;';
+        $this->prevPageLabel = 'Prev';
+        $this->nextPageLabel = 'Next';
         $this->htmlOptions['id'] = $this->getId();
         $this->htmlOptions['class'] = 'pager';
     }
