@@ -47,9 +47,11 @@ class WordController extends Controller
      */
     public function actionAdmin($sort = null, $q = null)
     {
-        $word = new Word();
         $q = mb_trim($q);
-        $dataProvider = $q !== '' ? $word->search($q) : $word->findAllBySort($sort);
+
+        $dataProvider = $q !== ''
+            ? Word::model()->search($q)
+            : Word::model()->findAllBySort($sort);
 
         $this->render('admin', compact('q', 'dataProvider'));
     }
