@@ -11,8 +11,13 @@ class ActiveRecord extends CActiveRecord
     protected function beforeValidate()
     {
         foreach ($this->getSafeAttributeNames() as $attribute) {
-            if ($this->tableSchema->columns[$attribute]->type === 'string') {
-                $this->$attribute = trim(mb_convert_kana($this->$attribute, 's', Yii::app()->charset));
+            $columns = $this->tableSchema->columns;
+
+            $a = isset($columns[$attribute]) && $columns[$attribute]->type === 'string';
+            $b = !isset($columns[$attribute]) && is_string($this->$attribute);
+
+            if ($a || $b) {
+                $this->$attribute = mb_trim($this->$attribute);
             }
         }
         return parent::beforeValidate();
