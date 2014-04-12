@@ -1,4 +1,4 @@
-<?php $this->renderPartial('_sortArea'); ?>
+<?php $this->renderPartial('_sort'); ?>
 
 <?php $this->widget('WordListView', array(
     'dataProvider' => $dataProvider,

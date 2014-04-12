@@ -17,7 +17,7 @@ class WordTest extends WebTestCase
     {
         $this->open('word/index');
         $this->assertTextPresent('5 results');
-        $this->checkSortArea();
+        $this->checkSort();
     }
 
     public function testAdmin()
@@ -25,7 +25,7 @@ class WordTest extends WebTestCase
         $this->open('word/index');
         $this->clickAndWait('link=Admin');
         $this->assertTextPresent('5 results');
-        $this->checkSortArea();
+        $this->checkSort();
 
         // test search form
         $this->type('q', '　　えー　');
@@ -124,7 +124,7 @@ class WordTest extends WebTestCase
         $this->assertTextPresent('無効なリクエストです。');
     }
 
-    private function checkSortArea()
+    private function checkSort()
     {
         $this->clickAndWait('link=a');
         $this->assertTextPresent('1 results');

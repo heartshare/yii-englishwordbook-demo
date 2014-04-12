@@ -2,7 +2,7 @@
 <?php cs()->registerScript('placeholder', "$('#q').placeholder();"); ?>
 
 <?php $this->widget('Flash'); ?>
-<?php $this->renderPartial('_sortArea'); ?>
+<?php $this->renderPartial('_sort'); ?>
 
 <?php $this->widget('WordListView', array(
     'dataProvider' => $dataProvider,
