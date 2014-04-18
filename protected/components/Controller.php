@@ -5,6 +5,8 @@
  */
 class Controller extends CController
 {
+    const PAGE_SIZE = 10;
+
     private $modelClass;
 
     /**
@@ -60,6 +62,20 @@ class Controller extends CController
             throw new CHttpException(404, 'データがありません。');
         }
         return $model;
+    }
+
+    /**
+     * Returns a data provider based on ActiveRecord.
+     * @param CActiveRecord $model
+     * @return CActiveDataProvider
+     */
+    public function loadActiveDataProvider($model)
+    {
+        $dataProvider = new CActiveDataProvider($model);
+        $dataProvider->getPagination()->pageSize = static::PAGE_SIZE;
+        $dataProvider->getPagination()->pageVar = 'page';
+
+        return $dataProvider;
     }
 }
 
