@@ -56,8 +56,8 @@ class Controller extends CController
      */
     public function loadModel()
     {
-        $modelClass = new $this->modelClass();
-        $model = $modelClass->findByPk(Yii::app()->getRequest()->getQuery('id'));
+        $modelClass = $this->modelClass;
+        $model = $modelClass::model()->findByPk(Yii::app()->getRequest()->getQuery('id'));
 
         if ($model === null) {
             throw new CHttpException(404, 'データがありません。');
