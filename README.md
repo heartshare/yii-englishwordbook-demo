@@ -14,7 +14,7 @@ Yii のコアファイルは [Composer](http://getcomposer.org/) でインスト
 コマンドラインでプロジェクトルートまで移動して以下を実行します。
 
 ```
-composer install --dev
+composer install
 ```
 
 Composer では Yii と PHPUnit などがインストールされます。  
@@ -44,10 +44,10 @@ Composer では Yii と PHPUnit などがインストールされます。
 ## その他
 
 ユニットテストを実行する場合は、コマンドラインで  
-/protected/tests/ まで移動し `../../vendor/bin/phpunit unit`  
+/protected/tests/ まで移動し `../vendor/bin/phpunit unit`  
   
 機能テストも同様に  
-/protected/tests/ まで移動し `../../vendor/bin/phpunit functional`  
+/protected/tests/ まで移動し `../vendor/bin/phpunit functional`  
   
 な感じになります。  
   
