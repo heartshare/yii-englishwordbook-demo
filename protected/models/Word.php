@@ -61,23 +61,23 @@ class Word extends ActiveRecord
     public function defaultScope()
     {
         return array(
-            'condition' => $this->getTableAlias(false, false).'.user_id = :user_id',
+            'condition' => $this->getTableAlias(false, false) . '.user_id = :user_id',
             'params' => array(':user_id' => user()->id),
         );
     }
 
     /**
-     * Finds the all words by sort.
-     * @param mixed $sort null or sorting strings
-     * @return CActiveDataProvider
+     * sort scope.
+     * @param string $sort strings of sort
+     * @return Word
      */
-    public function findAllBySort($sort)
+    public function sort($sort)
     {
         $c = new CDbCriteria();
         $c->order = 't.id DESC';
 
         if (strlen($sort) === 1) {
-            $c->addSearchCondition('t.en', $sort.'%', false);
+            $c->addSearchCondition('t.en', $sort . '%', false);
             $c->order = 't.en';
         }
         if ($sort === 'az') {
@@ -93,19 +93,14 @@ class Word extends ActiveRecord
             $c->order = 'RAND()';
         }
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $c,
-            'pagination' => array(
-                'pageSize' => param('wordPerPage'),
-                'pageVar' => 'page',
-            ),
-        ));
+        $this->dbCriteria->mergeWith($c);
+        return $this;
     }
 
     /**
-     * Retrieves the list of words based on the current search conditions
-     * @param string $q searching strings
-     * @return CActiveDataProvider
+     * search scope.
+     * @param string $q strings of search
+     * @return Word
      */
     public function search($q)
     {
@@ -114,14 +109,8 @@ class Word extends ActiveRecord
         $c->addSearchCondition('t.ja', $q, true, 'OR');
         $c->order = 't.en';
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $c,
-            'pagination' => array(
-                'pageSize' => param('wordPerPage'),
-                'pageVar' => 'page',
-                'params' => compact('q'),
-            ),
-        ));
+        $this->dbCriteria->mergeWith($c);
+        return $this;
     }
 }
 

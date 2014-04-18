@@ -5,6 +5,8 @@
  */
 class WordController extends Controller
 {
+    const PAGE_SIZE = 30;
+
     /**
      * @see CController::filters()
      */
@@ -32,26 +34,30 @@ class WordController extends Controller
 
     /**
      * Lists all words.
-     * @param mixed $sort null or sorting strings
+     * @param string $sort strings of sort
      */
     public function actionIndex($sort = null)
     {
-        $dataProvider = Word::model()->findAllBySort($sort);
+        $word = Word::model()->sort($sort);
+        $dataProvider = $this->loadActiveDataProvider($word);
+
         $this->render('index', compact('dataProvider'));
     }
 
     /**
      * Manages the words.
-     * @param mixed $sort null or sorting strings
-     * @param string $q searching strings
+     * @param string $sort strings of sort
+     * @param string $q strings of search
      */
     public function actionAdmin($sort = null, $q = null)
     {
         $q = mb_trim($q);
 
-        $dataProvider = $q !== ''
-            ? Word::model()->search($q)
-            : Word::model()->findAllBySort($sort);
+        $word = $q === ''
+            ? Word::model()->sort($sort)
+            : Word::model()->search($q);
+
+        $dataProvider = $this->loadActiveDataProvider($word);
 
         $this->render('admin', compact('q', 'dataProvider'));
     }
