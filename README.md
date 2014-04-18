@@ -1,6 +1,9 @@
 # English Wordbook using Yii Framework
 
 これは Yii Framework を使った英単語帳アプリのデモです。  
+
+## 必要条件
+Yii 1.x 系自体は PHP 5.1.0 ですが、このデモでは PHP 5.3.0 以上が必要になります。
   
 ## 使用環境
 Yii Framework: 1.1.14  
