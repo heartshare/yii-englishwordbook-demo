@@ -50,8 +50,9 @@ class Controller extends CController
     }
 
     /**
-     * Gets a particular model.
-     * @return CActiveRecord a particular model
+     * Returns a particular data model based on the primary key.
+     * @return CActiveRecord
+     * @throws CHttpException if model is null
      */
     public function loadModel()
     {
