@@ -79,7 +79,6 @@ return array(
     'params' => array(
         'adminEmail' => 'webmaster@example.com',
         'confirmDelete' => 'この項目を削除してもよろしいですか？',
-        'wordPerPage' => 30,
     ),
 );
 
