@@ -63,6 +63,6 @@ Composer では Yii と PHPUnit などがインストールされます。
 ランタイム関連のエラーが出る場合は、  
 /assets/, /protected/runtime/ のパーミッションを書き込み可能に変更してください。
 
-## Copyright and license
-Copyright &copy; 2013 Tomoki Morita.  
+## License
+&copy; 2013-2014 Tomoki Morita.  
 Distributed under the [MIT License](http://www.opensource.org/licenses/MIT)
