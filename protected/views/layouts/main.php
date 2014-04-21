@@ -35,7 +35,7 @@
     </div><!-- /#main -->
 
     <footer id="footer">
-        &copy; <?php echo date('Y'); ?> <?php echo app()->name; ?>
+        &copy; <?php echo date_create()->format('Y'); ?> <?php echo app()->name; ?>
     </footer><!-- /#footer -->
 
 </div><!-- /#container -->
