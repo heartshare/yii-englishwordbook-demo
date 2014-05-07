@@ -1,3 +1,6 @@
-/protected/vendor/
 composer.lock
-/protected/sass/.sass-cache/
+
+assets
+protected/runtime
+protected/sass/.sass-cache
+protected/vendor
