@@ -16,16 +16,25 @@ Yii のコアファイルは [Composer](http://getcomposer.org/) でインスト
 ダウンロード済でない方は [こちら](http://getcomposer.org/download/) を参考にしてみてください。  
 コマンドラインでプロジェクトルートまで移動して以下を実行します。
 
-```
+```shell
 composer install
 ```
 
 Composer では Yii と PHPUnit などがインストールされます。  
+
+### assets, proctected/runtime ディレクトリを作成
+
+以下を実行してディレクトリを作成し、書き込み権限を与えてください。  
+
+```shell
+cd /path/to/project_root
+mkdir -p assets protected/runtime && chmod a+x assets protected/runtime
+```
   
 ### データベースの設定
 
 **yii_englishwordbook_demo** という名前のデータベースを作成し、  
-/protected/config/ の 3 つそれぞれのファイルの db 設定箇所を修正してください。  
+/protected/config/ の 3 つそれぞれのファイルの db, testdb 設定箇所を修正してください。  
 (テスト用のデータベース名は **yii_englishwordbook_demo_test** がデフォルトです)
 
 #### SQLite3を使用する場合
@@ -36,32 +45,25 @@ Composer では Yii と PHPUnit などがインストールされます。
 #### MySQLを使用する場合
 
 コマンドラインで /protected/ まで移動し `php yiic migrate` でテーブルを作成します。  
+(テストを実行する場合は `php yiic migrate --connectionID=testdb` も実行)  
 動作確認用のサンプルデータが /protected/data/ にありますので、  
 マイグレーション実行後、インポートしてお使いください。  
-
-また、ユニットテストなどで使用するデータベースは、  
-**yii_englishwordbook_demo** を構造のみコピーして、  
-**yii_englishwordbook_demo_test** という名前で作成します。  
-(migration テーブルは不必要なので削除しておいてください)
 
 ## その他
 
 ユニットテストを実行する場合は、コマンドラインで  
 /protected/tests/ まで移動し `../vendor/bin/phpunit unit`  
   
-機能テストも同様に  
+機能テストは PHP 5.4.0 以上の場合、PHPビルドインサーバを使用する形になっていますので  
+`php -S localhost:8000 -t /path/to/project_root` でサーバを起動しておいて  
 /protected/tests/ まで移動し `../vendor/bin/phpunit functional`  
   
 な感じになります。  
+Firefox を使ってテストを走らせるので、予めダウンロードが必要になります。  
   
 機能テストは Selenium Server を使っています。  
 インストール済でない方はインストールしておいてください。  
 [http://docs.seleniumhq.org/download/](http://docs.seleniumhq.org/download/)  
-
-### 注意
-
-ランタイム関連のエラーが出る場合は、  
-/assets/, /protected/runtime/ のパーミッションを書き込み可能に変更してください。
 
 ## License
 &copy; 2013-2014 Tomoki Morita.  
