@@ -1,0 +1,30 @@
+language: php
+
+php:
+  - 5.5
+  - 5.4
+  - 5.3
+
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - wget http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar
+  - '[[ "$TRAVIS_PHP_VERSION" == "5.3" ]] || java -jar selenium-server-standalone-2.41.0.jar > /tmp/selenium.log 2>&1 &'
+  - '[[ "$TRAVIS_PHP_VERSION" == "5.3" ]] || php -S localhost:8000 > /tmp/server.log 2>&1 &'
+
+install:
+  - composer self-update
+  - composer install
+
+before_script:
+  - mkdir -p assets protected/runtime && chmod a+w assets protected/runtime
+  - mysql -e 'CREATE DATABASE yii_englishwordbook_demo;'
+  - mysql -e 'CREATE DATABASE yii_englishwordbook_demo_test;'
+  - php protected/yiic migrate --interactive=0 --connectionID=testdb
+
+script:
+  - cd protected/tests && ../vendor/bin/phpunit unit
+  - '[[ "$TRAVIS_PHP_VERSION" == "5.3" ]] || ../vendor/bin/phpunit functional'
+
+notifications:
+  email: false
