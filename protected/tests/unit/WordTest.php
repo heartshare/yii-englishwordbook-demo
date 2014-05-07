@@ -13,6 +13,32 @@ class WordTest extends CDbTestCase
         user()->setId($this->users['User_1']['id']);
     }
 
+    public function testRules()
+    {
+        $word = new Word();
+        $this->assertFalse($word->validate());
+
+        $word->setAttributes(array(
+            'en' => str_repeat('a', 100),
+            'ja' => str_repeat('a', 100),
+        ));
+        $this->assertFalse($word->validate());
+
+        $word->setAttributes(array(
+            'en' => 'hello',
+            'ja' => 'こんにちは',
+        ));
+        $this->assertTrue($word->validate());
+
+        $word->setAttributes(array(
+            'en' => '　　hello　',
+            'ja' => '　　こんにちは　',
+        ));
+        $this->assertTrue($word->validate());
+        $this->assertEquals('hello', $word->en);
+        $this->assertEquals('こんにちは', $word->ja);
+    }
+
     public function testDefaultScope()
     {
         $word = new Word();
