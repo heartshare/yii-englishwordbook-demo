@@ -20,6 +20,15 @@ return array(
             'charset' => 'utf8',
             'tablePrefix' => '',
         ),
+        'testdb' => array(
+            'class' => 'CDbConnection',
+            'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo_test',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => getenv('DB_PASS'),
+            'charset' => 'utf8',
+            'tablePrefix' => '',
+        ),
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
