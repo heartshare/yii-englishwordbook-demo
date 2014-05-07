@@ -14,8 +14,8 @@ return CMap::mergeArray(
              */
             'db' => array(
                 'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo_test',
-                'username' => 'testuser',
-                'password' => 'testpass',
+                'username' => 'root',
+                'password' => getenv('DB_PASS'),
             ),
             'urlManager' => array(
                 'showScriptName' => true,

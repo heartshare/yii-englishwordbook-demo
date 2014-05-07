@@ -45,8 +45,8 @@ return array(
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo',
             'emulatePrepare' => true,
-            'username' => 'testuser',
-            'password' => 'testpass',
+            'username' => 'root',
+            'password' => getenv('DB_PASS'),
             'charset' => 'utf8',
             'tablePrefix' => '',
             'enableProfiling' => true,
