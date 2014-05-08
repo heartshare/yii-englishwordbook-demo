@@ -2,7 +2,7 @@
 
 $testBaseUrl = (version_compare(PHP_VERSION, '5.4.0') >= 0)
     ? 'http://localhost:8000/index-test.php/'
-    : 'http://localhost/test-repo/index-test.php/';
+    : 'http://localhost/yii-englishwordbook-demo/index-test.php/';
 
 define('TEST_BASE_URL', $testBaseUrl);
 
