@@ -25,7 +25,7 @@
                 array('label' => 'Home', 'url' => array('/word/index')),
                 array('label' => 'Admin', 'url' => array('/word/admin'), 'visible' => !user()->isGuest),
                 array('label' => 'Create', 'url' => array('/word/create'), 'visible' => !user()->isGuest),
-                array('label' => 'About', 'url' => array('/site/about')),
+                array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                 array('label' => 'Login', 'url' => array('/site/login'), 'visible' => user()->isGuest),
                 array('label' => 'Logout (' . user()->name . ')', 'url' => array('/site/logout'), 'visible' => !user()->isGuest),
             ),

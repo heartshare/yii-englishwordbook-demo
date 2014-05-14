@@ -12,7 +12,7 @@ class SiteController extends Controller
     {
         return array(
             array('allow',
-                'actions' => array('error', 'about', 'login'),
+                'actions' => array('error', 'page', 'login'),
                 'users' => array('*'),
             ),
             array('allow',
@@ -21,6 +21,18 @@ class SiteController extends Controller
             ),
             array('deny',
                 'users' => array('*'),
+            ),
+        );
+    }
+
+    /**
+     * @see CController::actions()
+     */
+    public function actions()
+    {
+        return array(
+            'page' => array(
+                'class' => 'CViewAction',
             ),
         );
     }
@@ -38,14 +50,6 @@ class SiteController extends Controller
                 $this->render('error', $error);
             }
         }
-    }
-
-    /**
-     * The about page.
-     */
-    public function actionAbout()
-    {
-        $this->render('about');
     }
 
     /**

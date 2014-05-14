@@ -4,7 +4,7 @@ class SiteTest extends WebTestCase
 {
     public function testAbout()
     {
-        $this->open('site/about');
+        $this->open('site/page/view/about');
         $this->assertTextPresent('このサイトについて');
     }
 
