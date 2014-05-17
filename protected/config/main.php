@@ -32,10 +32,11 @@ return array(
             'showScriptName' => false,
             'caseSensitive' => false,
             'rules' => array(
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                'gii' => 'gii',
                 '<action:(login|logout)>' => 'site/<action>',
                 '<view:[\w.]+>' => 'site/page',
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             ),
         ),
         /*
