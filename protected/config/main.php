@@ -65,6 +65,17 @@ return array(
             'enableCsrfValidation' => true,
             'enableCookieValidation' => true,
         ),
+        'widgetFactory' => array(
+            'widgets' => array(
+                'CActiveForm' => array(
+                    'enableClientValidation' => true,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                        'validateOnChange' => false,
+                    ),
+                ),
+            ),
+        ),
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
