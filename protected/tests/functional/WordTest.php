@@ -41,7 +41,8 @@ class WordTest extends WebTestCase
         $this->open('word/index');
         $this->clickAndWait('link=Create');
 
-        $this->clickAndWait("//input[@value='登録する']");
+        $this->click("//input[@value='登録する']");
+        sleep(1);
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
 
@@ -79,7 +80,8 @@ class WordTest extends WebTestCase
 
         $this->type('Word[en]', '');
         $this->type('Word[ja]', '');
-        $this->clickAndWait("//input[@value='更新する']");
+        $this->click("//input[@value='更新する']");
+        sleep(1);
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
 

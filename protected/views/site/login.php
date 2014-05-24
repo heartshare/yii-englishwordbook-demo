@@ -1,24 +1,27 @@
 <div class="form">
-    <?php echo CHtml::form(); ?>
-    <?php echo CHtml::errorSummary($loginForm, ''); ?>
+    <?php $f = $this->beginWidget('CActiveForm'); ?>
+    <?php echo $f->errorSummary($loginForm, ''); ?>
 
     <div class="row">
-        <?php echo CHtml::activeLabel($loginForm, 'username'); ?>
-        <?php echo CHtml::activeTextField($loginForm, 'username'); ?>
+        <?php echo $f->label($loginForm, 'username'); ?>
+        <?php echo $f->textField($loginForm, 'username'); ?>
+        <?php echo $f->error($loginForm, 'username'); ?>
     </div><!-- /.row -->
 
     <div class="row">
-        <?php echo CHtml::activeLabel($loginForm, 'password'); ?>
-        <?php echo CHtml::activePasswordField($loginForm, 'password'); ?>
+        <?php echo $f->label($loginForm, 'password'); ?>
+        <?php echo $f->passwordField($loginForm, 'password'); ?>
+        <?php echo $f->error($loginForm, 'password'); ?>
     </div><!-- /.row -->
 
     <div class="row">
         <?php echo CHtml::submitButton('ログイン', array('class' => 'btn')); ?>
-        <?php echo CHtml::activeCheckBox($loginForm, 'rememberMe'); ?>
-        <?php echo CHtml::activeLabel($loginForm, 'rememberMe'); ?>
+        <?php echo $f->checkBox($loginForm, 'rememberMe'); ?>
+        <?php echo $f->label($loginForm, 'rememberMe'); ?>
+        <?php echo $f->error($loginForm, 'rememberMe'); ?>
     </div><!-- /.row -->
 
-    <?php echo CHtml::endForm(); ?>
+    <?php $this->endWidget(); ?>
 </div><!-- /.form -->
 
 <div class="alert alert-info">

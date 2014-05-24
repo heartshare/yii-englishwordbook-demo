@@ -3,22 +3,26 @@
 <?php endif; ?>
 
 <div class="form">
-    <?php echo CHtml::form(); ?>
-    <?php echo CHtml::errorSummary($word, ''); ?>
+    <?php $f = $this->beginWidget('CActiveForm', array(
+        'clientOptions' => array('hideErrorMessage' => true),
+    )); ?>
+    <?php echo $f->errorSummary($word, ''); ?>
 
     <div class="row">
-        <?php echo CHtml::activeLabel($word, 'en'); ?>
-        <?php echo CHtml::activeTextField($word, 'en', array('maxlength' => 64)); ?>
+        <?php echo $f->label($word, 'en'); ?>
+        <?php echo $f->textField($word, 'en', array('maxlength' => 64)); ?>
+        <?php echo $f->error($word, 'en'); ?>
     </div><!-- /.row -->
 
     <div class="row">
-        <?php echo CHtml::activeLabel($word, 'ja'); ?>
-        <?php echo CHtml::activeTextField($word, 'ja', array('maxlength' => 64)); ?>
+        <?php echo $f->label($word, 'ja'); ?>
+        <?php echo $f->textField($word, 'ja', array('maxlength' => 64)); ?>
+        <?php echo $f->error($word, 'ja'); ?>
     </div><!-- /.row -->
 
     <div class="row">
         <?php echo CHtml::submitButton($word->isNewRecord ? '登録する' : '更新する', array('class' => 'btn')); ?>
     </div><!-- /.row -->
 
-    <?php echo CHtml::endForm(); ?>
+    <?php $this->endWidget(); ?>
 </div><!-- /.form -->
