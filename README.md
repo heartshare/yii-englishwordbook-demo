@@ -7,7 +7,7 @@
 Yii 1.x 系自体は PHP 5.1.0 ですが、このデモでは PHP 5.3.3 以上が必要になります。
   
 ## 使用環境
-Yii Framework: 1.1.14  
+Yii Framework: 1.1.15  
 データベース: MySQL または SQLite3  
 
 ## 動作確認の手順
