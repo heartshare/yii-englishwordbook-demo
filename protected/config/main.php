@@ -11,6 +11,7 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.widgets.*',
     ),
     'modules' => array(
         'gii' => array(
@@ -92,6 +93,7 @@ return array(
     'params' => array(
         'adminEmail' => 'webmaster@example.com',
         'confirmDelete' => 'この項目を削除してもよろしいですか？',
+        'wordPerPage' => 30,
     ),
 );
 

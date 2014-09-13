@@ -5,8 +5,6 @@
  */
 class Controller extends CController
 {
-    const PAGE_SIZE = 10;
-
     private $modelClass;
 
     /**
@@ -29,6 +27,7 @@ class Controller extends CController
     {
         return array(
             'accessControl',
+            'postOnly + delete',
         );
     }
 
@@ -68,13 +67,14 @@ class Controller extends CController
     /**
      * Returns a data provider based on ActiveRecord.
      * @param CActiveRecord $model
+     * @param int $pageSize page size
      * @return CActiveDataProvider
      */
-    public function loadActiveDataProvider($model)
+    public function loadActiveDataProvider($model, $pageSize = 10)
     {
         $dataProvider = new CActiveDataProvider($model);
-        $dataProvider->getPagination()->pageSize = static::PAGE_SIZE;
-        $dataProvider->getPagination()->pageVar = 'page';
+        $dataProvider->pagination->pageSize = $pageSize;
+        $dataProvider->pagination->pageVar = 'page';
 
         return $dataProvider;
     }

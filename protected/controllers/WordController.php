@@ -5,18 +5,6 @@
  */
 class WordController extends Controller
 {
-    const PAGE_SIZE = 30;
-
-    /**
-     * @see CController::filters()
-     */
-    public function filters()
-    {
-        return array_merge(parent::filters(), array(
-            'postOnly + delete',
-        ));
-    }
-
     /**
      * @see CController::accessRules()
      */
@@ -39,7 +27,7 @@ class WordController extends Controller
     public function actionIndex($sort = null)
     {
         $word = Word::model()->sort($sort);
-        $dataProvider = $this->loadActiveDataProvider($word);
+        $dataProvider = $this->loadActiveDataProvider($word, param('wordPerPage'));
 
         $this->render('index', compact('dataProvider'));
     }
@@ -57,7 +45,7 @@ class WordController extends Controller
             ? Word::model()->sort($sort)
             : Word::model()->search($q);
 
-        $dataProvider = $this->loadActiveDataProvider($word);
+        $dataProvider = $this->loadActiveDataProvider($word, param('wordPerPage'));
 
         $this->render('admin', compact('q', 'dataProvider'));
     }

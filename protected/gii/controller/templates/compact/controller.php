@@ -6,16 +6,6 @@
 class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseClass."\n"; ?>
 {
     /**
-     * @see CController::filters()
-     */
-    public function filters()
-    {
-        return array_merge(parent::filters(), array(
-            'postOnly + delete',
-        ));
-    }
-
-    /**
      * @see CController::accessRules()
      */
     public function accessRules()
