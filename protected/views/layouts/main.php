@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><![endif]-->
-    <!--[if lt IE 9]><script src="<?php echo bu(); ?>/js/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="<?php echo bu(); ?>/js/html5shiv.min.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo bu(); ?>/images/ico-favicon.ico">
     <title><?php echo h($this->pageTitle); ?></title>
