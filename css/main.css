@@ -50,14 +50,14 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /* base general */
 body {
   color: #555;
-  background: whitesmoke url('../images/bg.png');
+  background: #f5f5f5 url('../images/bg.png');
   font: normal 13px "Lucida Grande", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.4;
   letter-spacing: 0;
@@ -283,7 +283,7 @@ input[type=submit] {
   position: relative;
   top: 0;
   left: -7px;
-  background: #eeeeee url('../images/ico-search.png') center center no-repeat;
+  background: #eee url('../images/ico-search.png') center center no-repeat;
 }
 
 /* main header */
