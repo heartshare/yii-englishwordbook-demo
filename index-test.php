@@ -12,6 +12,7 @@ $config = dirname(__FILE__) . '/protected/config/test.php';
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 
 require_once($yii);
+require(dirname(__FILE__) . '/protected/vendor/autoload.php');
 require(dirname(__FILE__) . '/protected/helpers/functions.php');
 Yii::createWebApplication($config)->run();
 
