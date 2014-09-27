@@ -1,4 +1,6 @@
 # Require any additional compass plugins here.
+require 'bootstrap-sass'
+require 'compass/import-once/activate'
 
 # general setting
 # cache = false
@@ -10,6 +12,7 @@ css_dir = "../../css"
 sass_dir = "./"
 images_dir = "../../images"
 javascripts_dir = "../../js"
+fonts_dir = "../../fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = (environment == :production) ? :compressed : :expanded
