@@ -17,7 +17,7 @@ Yii のコアファイルは [Composer](http://getcomposer.org/) でインスト
 php composer.phar install
 ```
 
-もしグルーバルにインストールしている場合は以下。
+もしグローバルにインストールしている場合は以下。
 
 ```shell
 composer install
@@ -50,7 +50,7 @@ php yiic migrate
 テストを実行したい場合は以下
 
 ```shell
-php yiic migrate --connectionID=testdb も実行
+php yiic migrate --connectionID=testdb
 ```
 
 動作確認用のサンプルデータが /protected/data/ にありますので、  
