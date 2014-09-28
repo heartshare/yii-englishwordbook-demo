@@ -1,5 +1,4 @@
-# English Wordbook using Yii Framework
-[![Build Status](https://travis-ci.org/jamband/yii-englishwordbook-demo.svg?branch=master)](https://travis-ci.org/jamband/yii-englishwordbook-demo)
+# English Wordbook with Yii [![Build Status](https://travis-ci.org/jamband/yii-englishwordbook-demo.svg?branch=master)](https://travis-ci.org/jamband/yii-englishwordbook-demo)
 
 これは Yii Framework を使った英単語帳アプリのデモです。  
 
