@@ -42,7 +42,7 @@ return array(
         ),
         /*
         'db' => array(
-            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/yii_englishwordbook_demo.sqlite3',
+            'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo.sqlite3',
         ),
          */
         'db' => array(

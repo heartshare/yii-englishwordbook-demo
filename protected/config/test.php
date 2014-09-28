@@ -9,7 +9,7 @@ return CMap::mergeArray(
             ),
             /*
             'db' => array(
-                'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/yii_englishwordbook_demo_test.sqlite3',
+                'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo_test.sqlite3',
             ),
              */
             'db' => array(
