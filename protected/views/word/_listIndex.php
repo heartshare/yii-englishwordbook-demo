@@ -1,3 +1,7 @@
-<span class="word"><?php echo h($data->en); ?></span>
-<span onmouseover="this.style.color='#555';" onmouseout="this.style.color='#fff';"><?php echo h($data->ja); ?></span>
+<span class="word">
+<?php echo TbHtml::popover(h($data->en), '', h($data->ja), array(
+    'data-trigger' => 'hover',
+    'data-animation' => false,
+)); ?>
+</span><!-- /.word -->
 <br>

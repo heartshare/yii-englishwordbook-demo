@@ -30,7 +30,7 @@ class WebTestCase extends CWebTestCase
         $this->open('login');
         $this->type('LoginForm[username]', $username);
         $this->type('LoginForm[password]', $password);
-        $this->clickAndWait("//input[@value='".self::LOGIN_BUTTON."']");
+        $this->clickAndWait("//button[text()='".self::LOGIN_BUTTON."']");
     }
 }
 

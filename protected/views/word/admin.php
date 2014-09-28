@@ -1,7 +1,7 @@
-<?php cs()->registerScriptFile(bu() . '/js/jquery.placeholder.js', CClientScript::POS_END); ?>
+<?php cs()->registerScriptFile(bu() . '/js/jquery.placeholder.min.js', CClientScript::POS_END); ?>
 <?php cs()->registerScript('placeholder', "$('#q').placeholder();"); ?>
 
-<?php $this->widget('Flash'); ?>
+<?php $this->widget('\TbAlert'); ?>
 <?php $this->renderPartial('_sort'); ?>
 
 <?php $this->widget('WordListView', array(
@@ -10,10 +10,14 @@
 )); ?>
 
 <div class="text-right">
-    <div class="form">
-        <?php echo CHtml::form(url($this->route), 'get'); ?>
-        <?php echo CHtml::textField('q', $q, array('placeholder' => 'Search')); ?>
-        <?php echo CHtml::submitButton('', array('name' => null, 'class' => 'btn btn-search')); ?>
-        <?php echo CHtml::endForm(); ?>
-    </div><!-- /.form -->
+    <?php echo TbHtml::formTb(TbHtml::FORM_LAYOUT_INLINE, url($this->route), 'get'); ?>
+    <div class="input-group">
+        <?php echo TbHtml::textField('q', $q, array('placeholder' => 'Search')); ?>
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+            </button><!-- /.btn -->
+        </span><!-- /.input-group-btn -->
+    </div><!-- /.input-group -->
+    <?php echo TbHtml::endForm(); ?>
 </div><!-- /.text-right -->

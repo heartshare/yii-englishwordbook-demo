@@ -1,3 +1,4 @@
-<h2>このサイトについて</h2>
+<h1>このサイトについて</h1>
 
-詳しくは <a href="https://github.com/jamband/yii-englishwordbook-demo" target="_blank">GitHub: jamband/yii-englishwordbook-demo</a> をご覧ください
+このサイトでは PHP のフレームワーク Yii Framework を使ったデモアプリを公開しています。<br>
+詳しくは <a href="https://github.com/jamband/yii-englishwordbook-demo" target="_blank">GitHub: jamband/yii-englishwordbook</a> をご覧ください。

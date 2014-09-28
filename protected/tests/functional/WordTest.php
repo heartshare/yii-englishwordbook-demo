@@ -17,7 +17,20 @@ class WordTest extends WebTestCase
     {
         $this->open('word/index');
         $this->assertTextPresent('5 results');
-        $this->checkSort();
+
+        $this->clickAndWait('link=a');
+        $this->assertTextPresent('1 results');
+        $this->assertTextPresent($this->words['Word_3']['en']);
+        // $this->assertTextPresent($this->words['Word_3']['ja']);
+        $this->assertTextNotPresent($this->words['Word_1']['en']);
+        // $this->assertTextNotPresent($this->words['Word_1']['ja']);
+
+        $this->clickAndWait('link=b');
+        $this->assertTextPresent('1 results');
+        $this->assertTextPresent($this->words['Word_1']['en']);
+        // $this->assertTextPresent($this->words['Word_1']['ja']);
+        $this->assertTextNotPresent($this->words['Word_3']['en']);
+        // $this->assertTextNotPresent($this->words['Word_3']['ja']);
     }
 
     public function testAdmin()
@@ -25,11 +38,24 @@ class WordTest extends WebTestCase
         $this->open('word/index');
         $this->clickAndWait('link=Admin');
         $this->assertTextPresent('5 results');
-        $this->checkSort();
+
+        $this->clickAndWait('link=a');
+        $this->assertTextPresent('1 results');
+        $this->assertTextPresent($this->words['Word_3']['en']);
+        $this->assertTextPresent($this->words['Word_3']['ja']);
+        $this->assertTextNotPresent($this->words['Word_1']['en']);
+        $this->assertTextNotPresent($this->words['Word_1']['ja']);
+
+        $this->clickAndWait('link=b');
+        $this->assertTextPresent('1 results');
+        $this->assertTextPresent($this->words['Word_1']['en']);
+        $this->assertTextPresent($this->words['Word_1']['ja']);
+        $this->assertTextNotPresent($this->words['Word_3']['en']);
+        $this->assertTextNotPresent($this->words['Word_3']['ja']);
 
         // test search form
         $this->type('q', '　　ご　');
-        $this->clickAndWait('css=.btn-search');
+        $this->clickAndWait("css=input#q + .input-group-btn button[type='submit']");
         $this->assertValue('q', 'ご');
         $this->assertTextPresent('1 results');
         $this->assertTextPresent($this->words['Word_3']['en']);
@@ -41,14 +67,14 @@ class WordTest extends WebTestCase
         $this->open('word/index');
         $this->clickAndWait('link=Create');
 
-        $this->click("//input[@value='登録する']");
+        $this->click("//button[text()='登録する']");
         sleep(1);
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
 
         $this->type('Word[en]', 'hello');
         $this->type('Word[ja]', 'こんにちは');
-        $this->clickAndWait("//input[@value='登録する']");
+        $this->clickAndWait("//button[text()='登録する']");
         $this->assertLocation(TEST_BASE_URL . 'word/[0-9]+');
         $this->assertTextPresent('英単語の追加が完了いたしました。');
         $this->assertTextPresent('hello');
@@ -80,14 +106,14 @@ class WordTest extends WebTestCase
 
         $this->type('Word[en]', '');
         $this->type('Word[ja]', '');
-        $this->click("//input[@value='更新する']");
+        $this->click("//button[text()='更新する']");
         sleep(1);
         $this->assertTextPresent('英単語 が入力されていません。');
         $this->assertTextPresent('日本語訳 が入力されていません。');
 
         $this->type('Word[en]', 'hello');
         $this->type('Word[ja]', 'こんにちは');
-        $this->clickAndWait("//input[@value='更新する']");
+        $this->clickAndWait("//button[text()='更新する']");
 
         $this->assertLocation(TEST_BASE_URL . 'word/' . $this->words['Word_5']['id']);
         $this->assertTextPresent('英単語の更新が完了いたしました。');
@@ -124,23 +150,6 @@ class WordTest extends WebTestCase
         // test 400 error
         $this->open('word/delete/' . $this->words['Word_1']['id']);
         $this->assertTextPresent('無効なリクエストです。');
-    }
-
-    private function checkSort()
-    {
-        $this->clickAndWait('link=a');
-        $this->assertTextPresent('1 results');
-        $this->assertTextPresent($this->words['Word_3']['en']);
-        $this->assertTextPresent($this->words['Word_3']['ja']);
-        $this->assertTextNotPresent($this->words['Word_1']['en']);
-        $this->assertTextNotPresent($this->words['Word_1']['ja']);
-
-        $this->clickAndWait('link=b');
-        $this->assertTextPresent('1 results');
-        $this->assertTextPresent($this->words['Word_1']['en']);
-        $this->assertTextPresent($this->words['Word_1']['ja']);
-        $this->assertTextNotPresent($this->words['Word_3']['en']);
-        $this->assertTextNotPresent($this->words['Word_3']['ja']);
     }
 }
 

@@ -1,35 +1,21 @@
-<div class="form">
-    <?php $f = $this->beginWidget('CActiveForm'); ?>
-    <?php echo $f->errorSummary($loginForm, ''); ?>
+<?php $f = $this->beginWidget('\TbActiveForm'); ?>
+<?php echo $f->errorSummary($loginForm, ''); ?>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $f->textFieldControlGroup($loginForm, 'username'); ?>
+        <?php echo $f->passwordFieldControlGroup($loginForm, 'password'); ?>
+    </div><!-- /.col-* -->
+</div><!-- /.row -->
+<?php echo $f->checkBoxControlGroup($loginForm, 'rememberMe'); ?>
+<?php echo TbHtml::submitButton('ログイン', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php $this->endWidget(); ?>
+<hr>
 
-    <div class="row">
-        <?php echo $f->label($loginForm, 'username'); ?>
-        <?php echo $f->textField($loginForm, 'username'); ?>
-        <?php echo $f->error($loginForm, 'username'); ?>
-    </div><!-- /.row -->
+<div class="panel panel-default">
+    <div class="panel-heading">以下の 2 つのアカウントでログインできます。</div>
+    <div class="panel-body">
+        <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin |
+        <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo
+    </div>
+</div>
 
-    <div class="row">
-        <?php echo $f->label($loginForm, 'password'); ?>
-        <?php echo $f->passwordField($loginForm, 'password'); ?>
-        <?php echo $f->error($loginForm, 'password'); ?>
-    </div><!-- /.row -->
-
-    <div class="row">
-        <?php echo CHtml::submitButton('ログイン', array('class' => 'btn')); ?>
-        <?php echo $f->checkBox($loginForm, 'rememberMe'); ?>
-        <?php echo $f->label($loginForm, 'rememberMe'); ?>
-        <?php echo $f->error($loginForm, 'rememberMe'); ?>
-    </div><!-- /.row -->
-
-    <?php $this->endWidget(); ?>
-</div><!-- /.form -->
-
-<div class="alert alert-info">
-    以下の 2 つのアカウントでログインできます。
-    <hr>
-    <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin<br>
-    <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin<br>
-    <hr>
-    <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo<br>
-    <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo<br>
-</div><!-- /.info -->

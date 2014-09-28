@@ -1,5 +1,5 @@
 <?php $this->pageTitle = $word->en . ' - ' . $this->pageTitle; ?>
-<?php $this->widget('Flash'); ?>
+<?php $this->widget('\TbAlert'); ?>
 
 <div class="text-center">
     <span class="word"><?php echo h($word->en); ?></span>

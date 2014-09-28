@@ -2,27 +2,15 @@
 <?php $this->pageTitle = $word->en . ' - ' . $this->pageTitle; ?>
 <?php endif; ?>
 
-<div class="form">
-    <?php $f = $this->beginWidget('CActiveForm', array(
-        'clientOptions' => array('hideErrorMessage' => true),
-    )); ?>
-    <?php echo $f->errorSummary($word, ''); ?>
-
-    <div class="row">
-        <?php echo $f->label($word, 'en'); ?>
-        <?php echo $f->textField($word, 'en', array('maxlength' => 64)); ?>
-        <?php echo $f->error($word, 'en'); ?>
-    </div><!-- /.row -->
-
-    <div class="row">
-        <?php echo $f->label($word, 'ja'); ?>
-        <?php echo $f->textField($word, 'ja', array('maxlength' => 64)); ?>
-        <?php echo $f->error($word, 'ja'); ?>
-    </div><!-- /.row -->
-
-    <div class="row">
-        <?php echo CHtml::submitButton($word->isNewRecord ? '登録する' : '更新する', array('class' => 'btn')); ?>
-    </div><!-- /.row -->
-
-    <?php $this->endWidget(); ?>
-</div><!-- /.form -->
+<?php $f = $this->beginWidget('\TbActiveForm', array(
+    'hideInlineErrors' => true,
+)); ?>
+<?php echo $f->errorSummary($word, ''); ?>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $f->textFieldControlGroup($word, 'en', array('maxlength' => 64)); ?>
+        <?php echo $f->textFieldControlGroup($word, 'ja', array('maxlength' => 64)); ?>
+    </div><!-- /.col-* -->
+</div><!-- /.row -->
+<?php echo TbHtml::submitButton($word->isNewRecord ? '登録する' : '更新する', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+<?php $this->endWidget(); ?>
