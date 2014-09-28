@@ -1,5 +1,5 @@
 {
-  "name": "lab",
+  "name": "yii-englishwordbook-demo",
   "dependencies": {
     "html5shiv": "latest",
     "respond": "latest",

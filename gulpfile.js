@@ -29,7 +29,7 @@ gulp.task('browserSync', function() {
   browserSync({
     sever: {
       baseDir: './',
-      proxy: 'local.hoge:8080'
+      proxy: 'local.yii-englishwordbook-demo:8080'
     }
   });
 });
