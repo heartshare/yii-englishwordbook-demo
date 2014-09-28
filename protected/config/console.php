@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+    'basePath' => __DIR__ . DIRECTORY_SEPARATOR . '..',
     'name' => 'English Wordbook Console Yii Framework',
     'preload' => array(
         'log',

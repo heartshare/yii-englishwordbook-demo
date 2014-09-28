@@ -5,14 +5,15 @@
  */
 
 // change the following paths if necessary
-$yii = dirname(__FILE__) . '/protected/vendor/yiisoft/yii/framework/yii.php';
-$config = dirname(__FILE__) . '/protected/config/test.php';
+$yii    = __DIR__ . '/protected/vendor/yiisoft/yii/framework/yii.php';
+$config = __DIR__ . '/protected/config/test.php';
 
 // remove the following line when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 
-require_once($yii);
-require(dirname(__FILE__) . '/protected/vendor/autoload.php');
-require(dirname(__FILE__) . '/protected/helpers/functions.php');
+require_once $yii;
+require __DIR__ . '/protected/vendor/autoload.php';
+require __DIR__ . '/protected/helpers/functions.php';
+
 Yii::createWebApplication($config)->run();
 
