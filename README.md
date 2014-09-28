@@ -68,6 +68,7 @@ cd protected/tests
 
 ```shell
 php -S localhost:8000 -t /path/to/project_root
+selenium-server -p 4444
 cd protected/tests
 ../vendor/bin/phpunit functional
 ```
