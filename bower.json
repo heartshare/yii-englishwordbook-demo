@@ -2,6 +2,7 @@
   "name": "lab",
   "dependencies": {
     "html5shiv": "latest",
+    "respond": "latest",
     "jquery-placeholder": "latest"
   }
 }
