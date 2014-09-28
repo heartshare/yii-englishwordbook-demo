@@ -16,6 +16,6 @@
     <div class="panel-body">
         <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin |
         <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo
-    </div>
-</div>
+    </div><!-- /.panel-body -->
+</div><!-- /.panel -->
 
