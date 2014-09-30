@@ -1,19 +1,20 @@
 {
-  "require": {
-    "yiisoft/yii": "1.1.15",
-    "crisu83/yiistrap": "dev-bs3"
-  },
-  "replace": {
-    "twbs/bootstrap": "*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "3.7.*",
-    "phpunit/phpunit-selenium": "dev-master",
-    "phpunit/phpunit-story": "*",
-    "phpunit/dbunit": "*",
-    "phpunit/php-invoker": "*"
+    "require": {
+        "yiisoft/yii": "1.1.15",
+        "crisu83/yiistrap": "dev-bs3"
     },
-  "config": {
-    "vendor-dir": "protected/vendor"
-  }
+    "replace": {
+        "twbs/bootstrap": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/phpunit-selenium": "*",
+        "phpunit/phpunit-story": "*",
+        "phpunit/dbunit": "*",
+        "phpunit/php-invoker": "*"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "vendor-dir": "protected/vendor"
+    }
 }
