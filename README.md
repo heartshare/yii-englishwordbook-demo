@@ -8,7 +8,7 @@
 - MySQL 5.x もしくは SQLite3
   
 ## 動作確認の手順
-Zip ファイルを DL するか、ローカルに git clone してお使いください。  
+ローカルに git clone してお使いください。  
 Yii のコアファイルは [Composer](http://getcomposer.org/) でインストールします。  
 ダウンロード済でない方は [こちら](http://getcomposer.org/download/) を参考にしてみてください。  
 コマンドラインでプロジェクトルートまで移動して以下を実行します。
@@ -28,7 +28,7 @@ composer install
 
 ```shell
 cd /path/to/project_root
-mkdir -p assets protected/runtime && chmod a+x assets protected/runtime
+mkdir -p assets protected/runtime && chmod 0777 assets protected/runtime
 ```
   
 ### データベースの設定
