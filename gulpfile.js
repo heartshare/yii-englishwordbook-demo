@@ -7,12 +7,6 @@ var reload      = browserSync.reload;
 
 // task: js
 gulp.task('js', function() {
-  gulp.src('./bower_components/html5shiv/dist/html5shiv.min.js')
-    .pipe(gulp.dest('js'));
-
-  gulp.src('./bower_components/respond/dest/respond.min.js')
-    .pipe(gulp.dest('js'));
-
   gulp.src('./bower_components/jquery-placeholder/jquery.placeholder.js')
     .pipe($.rename('jquery.placeholder.min.js'))
     .pipe($.uglify())
