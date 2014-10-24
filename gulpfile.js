@@ -8,7 +8,7 @@ var reload      = browserSync.reload;
 // task: init
 gulp.task('init', function() {
   gulp.src('./bower_components/jquery-placeholder/jquery.placeholder.js')
-    .pipe($.rename('jquery.placeholder.min.js'))
+    .pipe($.rename({suffix: '.min'}))
     .pipe($.uglify({preserveComments: 'some'}))
     .pipe(gulp.dest('js'));
 
