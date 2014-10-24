@@ -2,7 +2,6 @@ composer.lock
 
 assets
 protected/runtime
-protected/sass/.sass-cache
 protected/vendor
 
 bower_components
