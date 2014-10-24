@@ -47,7 +47,7 @@ gulp.task('clean', del.bind(null, [
 
 // task: default
 gulp.task('default', ['browserSync'], function() {
-  gulp.watch('./less/*.less', ['less']);
+  gulp.watch('./protected/less/*.less', ['less']);
   gulp.watch('./protected/{views,widgets}/**/*.php', reload);
   gulp.watch('./**/css/*.css', reload);
 });
