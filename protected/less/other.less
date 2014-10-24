@@ -1,0 +1,38 @@
+.sort-link {
+  float: left;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.words, .words-hide {
+  padding-left: 40px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+.words-hide {
+  .word, a {
+    color: @text-color;
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+.words {
+  .word, a {
+    margin-right: 10px;
+  }
+  .word {
+    color: @text-color;
+  }
+  a {
+    &:link,
+    &:visited {
+      color: @body-bg;
+    }
+    &:hover,
+    &:active, {
+      color: @brand-primary;
+    }
+  }
+}
+
+
