@@ -2,10 +2,7 @@
 <?php $this->pageTitle = $word->en . ' - ' . $this->pageTitle; ?>
 <?php endif; ?>
 
-<?php $f = $this->beginWidget('\TbActiveForm', array(
-    'hideInlineErrors' => true,
-)); ?>
-<?php echo $f->errorSummary($word, ''); ?>
+<?php $f = $this->beginWidget('\TbActiveForm'); ?>
 <div class="row">
     <div class="col-md-6">
         <?php echo $f->textFieldControlGroup($word, 'en', array('maxlength' => 64)); ?>

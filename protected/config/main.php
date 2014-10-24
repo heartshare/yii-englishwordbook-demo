@@ -68,7 +68,7 @@ return array(
         ),
         'widgetFactory' => array(
             'widgets' => array(
-                'CActiveForm' => array(
+                '\TbActiveForm' => array(
                     'enableClientValidation' => true,
                     'clientOptions' => array(
                         'validateOnSubmit' => true,
