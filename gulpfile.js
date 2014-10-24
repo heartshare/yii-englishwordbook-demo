@@ -16,7 +16,7 @@ gulp.task('init', function() {
     .pipe(gulp.dest('js'));
 
   gulp.src('./bower_components/bootstrap/fonts/*')
-    .pipe(gulp.dest('fonts/bootstrap'));
+    .pipe(gulp.dest('fonts'));
 });
 
 // task: less
