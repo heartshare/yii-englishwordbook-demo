@@ -24,7 +24,7 @@ gulp.task('less', function() {
   gulp.src('./protected/less/styles.less')
     .pipe($.less())
     .pipe($.autoprefixer('last 2 version', 'ie 8'))
-    .pipe($.minifyCss())
+    .pipe($.minifyCss({keepBreaks: true}))
     .pipe(gulp.dest('./css'))
     .pipe(reload({stream: true, once: true}));
 });
