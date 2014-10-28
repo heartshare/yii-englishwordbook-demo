@@ -1,18 +1,14 @@
 // Initialization
-var gulp        = require('gulp');
-var $           = require('gulp-load-plugins')();
-var del         = require('del');
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+var browserSync     = require('browser-sync');
+var del             = require('del');
+var gulp            = require('gulp');
+var $               = require('gulp-load-plugins')();
+var mainBowerFiles  = require('main-bower-files');
+var reload          = browserSync.reload;
 
 // task: init
 gulp.task('init', function() {
-  gulp.src('./bower_components/jquery-placeholder/jquery.placeholder.js')
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.uglify({preserveComments: 'some'}))
-    .pipe(gulp.dest('js'));
-
-  gulp.src('./bower_components/bootstrap/dist/js/bootstrap.min.js')
+  gulp.src(mainBowerFiles())
     .pipe(gulp.dest('js'));
 
   gulp.src('./bower_components/bootstrap/fonts/*')
