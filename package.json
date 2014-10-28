@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "npm i && bower i && gulp init less"
+  },
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
