@@ -3,5 +3,13 @@
   "dependencies": {
     "bootstrap": "3.2.0",
     "jquery-placeholder": "latest"
+  },
+  "overrides": {
+    "jquery-placeholder": {
+      "main": "jquery.placeholder.js"
+    },
+    "bootstrap": {
+      "main": "dist/js/bootstrap.min.js"
+    }
   }
 }
