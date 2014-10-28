@@ -5,6 +5,9 @@
     "jquery-placeholder": "latest"
   },
   "overrides": {
+    "jquery": {
+      "ignore": true
+    },
     "jquery-placeholder": {
       "main": "jquery.placeholder.js"
     },
