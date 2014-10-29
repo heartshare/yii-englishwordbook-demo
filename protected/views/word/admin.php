@@ -1,4 +1,4 @@
-<?php cs()->registerScriptFile(bu() . '/js/jquery.placeholder.min.js', CClientScript::POS_END); ?>
+<?php cs()->registerScriptFile(bu() . '/js/jquery.placeholder.js', CClientScript::POS_END); ?>
 <?php cs()->registerScript('placeholder', "$('#q').placeholder();"); ?>
 
 <?php $this->widget('\TbAlert'); ?>
