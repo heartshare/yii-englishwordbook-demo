@@ -50,8 +50,8 @@
 <?php cs()->registerPackage('jquery'); ?>
 <script src="<?php echo bu(); ?>/js/bootstrap.min.js"></script>
 
-<script type='text/javascript'>//<![CDATA[
-    document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.5.8.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.3.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
 //]]></script>
 </body>
 </html>
