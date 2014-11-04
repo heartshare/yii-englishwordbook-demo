@@ -1,7 +1,7 @@
 {
   "name": "yii-englishwordbook-demo",
   "dependencies": {
-    "bootstrap": "3.3.0",
+    "bootstrap": "3.2.0",
     "jquery-placeholder": "latest"
   },
   "overrides": {
