@@ -6,8 +6,8 @@ var $               = require('gulp-load-plugins')();
 var mainBowerFiles  = require('main-bower-files');
 var reload          = browserSync.reload;
 
-// task: init
-gulp.task('init', function() {
+// task: build
+gulp.task('build', ['less'], function() {
   gulp.src(mainBowerFiles())
     .pipe(gulp.dest('js'));
 

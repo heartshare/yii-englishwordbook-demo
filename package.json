@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npm i && bower i && gulp init less"
+    "start": "npm i && bower i && gulp build"
   },
   "devDependencies": {
     "browser-sync": "latest",
