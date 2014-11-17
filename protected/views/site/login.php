@@ -8,7 +8,7 @@
         <?php echo $f->checkBoxControlGroup($loginForm, 'rememberMe'); ?>
 
         <div class="form-group">
-            <?php echo TbHtml::submitButton('ログイン', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+            <?php echo TbHtml::submitButton('ログイン', array('color' => 'primary')); ?>
         </div><!-- /.form-group -->
 
         <?php $this->endWidget(); ?>
