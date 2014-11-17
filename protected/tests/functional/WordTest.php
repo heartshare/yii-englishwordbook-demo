@@ -21,16 +21,18 @@ class WordTest extends WebTestCase
         $this->clickAndWait('link=a');
         $this->assertTextPresent('1 results');
         $this->assertTextPresent($this->words['Word_3']['en']);
-        // $this->assertTextPresent($this->words['Word_3']['ja']);
+        $this->mouseOver('css=span.word a');
+        $this->assertTextPresent($this->words['Word_3']['ja']);
         $this->assertTextNotPresent($this->words['Word_1']['en']);
-        // $this->assertTextNotPresent($this->words['Word_1']['ja']);
+        $this->assertTextNotPresent($this->words['Word_1']['ja']);
 
         $this->clickAndWait('link=b');
         $this->assertTextPresent('1 results');
         $this->assertTextPresent($this->words['Word_1']['en']);
-        // $this->assertTextPresent($this->words['Word_1']['ja']);
+        $this->mouseOver('css=span.word a');
+        $this->assertTextPresent($this->words['Word_1']['ja']);
         $this->assertTextNotPresent($this->words['Word_3']['en']);
-        // $this->assertTextNotPresent($this->words['Word_3']['ja']);
+        $this->assertTextNotPresent($this->words['Word_3']['ja']);
     }
 
     public function testAdmin()
@@ -68,9 +70,8 @@ class WordTest extends WebTestCase
         $this->clickAndWait('link=Create');
 
         $this->click("//button[text()='登録する']");
-        sleep(1);
-        $this->assertTextPresent('英単語 が入力されていません。');
-        $this->assertTextPresent('日本語訳 が入力されていません。');
+        $this->waitForTextPresent('英単語 が入力されていません。');
+        $this->waitForTextPresent('日本語訳 が入力されていません。');
 
         $this->type('Word[en]', 'hello');
         $this->type('Word[ja]', 'こんにちは');
@@ -107,9 +108,8 @@ class WordTest extends WebTestCase
         $this->type('Word[en]', '');
         $this->type('Word[ja]', '');
         $this->click("//button[text()='更新する']");
-        sleep(1);
-        $this->assertTextPresent('英単語 が入力されていません。');
-        $this->assertTextPresent('日本語訳 が入力されていません。');
+        $this->waitForTextPresent('英単語 が入力されていません。');
+        $this->waitForTextPresent('日本語訳 が入力されていません。');
 
         $this->type('Word[en]', 'hello');
         $this->type('Word[ja]', 'こんにちは');
