@@ -10,14 +10,10 @@
 )); ?>
 
 <div class="text-right">
-    <?php echo TbHtml::formTb(TbHtml::FORM_LAYOUT_INLINE, url($this->route), 'get'); ?>
-    <div class="input-group">
-        <?php echo TbHtml::textField('q', $q, array('placeholder' => 'Search')); ?>
-        <span class="input-group-btn">
-            <button class="btn btn-primary" type="submit">
-                <?php echo TbHtml::icon('search'); ?>
-            </button><!-- /.btn -->
-        </span><!-- /.input-group-btn -->
-    </div><!-- /.input-group -->
+    <?php echo TbHtml::formTb('inline', url($this->route), 'get'); ?>
+    <?php echo TbHtml::textField('q', $q, array(
+        'placeholder' => 'Search',
+        'append' => TbHtml::submitButton(TbHtml::icon('search') , array('name' => '', 'color' => 'primary')),
+    )); ?>
     <?php echo TbHtml::endForm(); ?>
 </div><!-- /.text-right -->
