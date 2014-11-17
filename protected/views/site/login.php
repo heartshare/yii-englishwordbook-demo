@@ -1,15 +1,19 @@
-<?php $f = $this->beginWidget('\TbActiveForm'); ?>
-<?php echo $f->errorSummary($loginForm, ''); ?>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-xs-12">
+        <?php $f = $this->beginWidget('\TbActiveForm'); ?>
+        <?php echo $f->errorSummary($loginForm, ''); ?>
+
         <?php echo $f->textFieldControlGroup($loginForm, 'username'); ?>
         <?php echo $f->passwordFieldControlGroup($loginForm, 'password'); ?>
-    </div><!-- /.col-* -->
+        <?php echo $f->checkBoxControlGroup($loginForm, 'rememberMe'); ?>
+
+        <div class="form-group">
+            <?php echo TbHtml::submitButton('ログイン', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+        </div><!-- /.form-group -->
+
+        <?php $this->endWidget(); ?>
+    </div><!-- /.col -->
 </div><!-- /.row -->
-<?php echo $f->checkBoxControlGroup($loginForm, 'rememberMe'); ?>
-<?php echo TbHtml::submitButton('ログイン', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
-<?php $this->endWidget(); ?>
-<hr>
 
 <?php $this->beginWidget('\TbPanel', array('title' => '以下の 2 つのアカウントでログインできます。')); ?>
     <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin |
