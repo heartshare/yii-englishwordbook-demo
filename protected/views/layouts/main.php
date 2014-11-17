@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php $this->widget('\TbNavbar', array(
-    'brandLabel' => '<span class="glyphicon glyphicon-list-alt"></span>',
+    'brandLabel' => TbHtml::icon('list-alt'),
     'display' => null,
     'collapse' => true,
     'items' => array(

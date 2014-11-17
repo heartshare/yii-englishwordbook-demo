@@ -15,7 +15,7 @@
         <?php echo TbHtml::textField('q', $q, array('placeholder' => 'Search')); ?>
         <span class="input-group-btn">
             <button class="btn btn-primary" type="submit">
-                <span class="glyphicon glyphicon-search"></span>
+                <?php echo TbHtml::icon('search'); ?>
             </button><!-- /.btn -->
         </span><!-- /.input-group-btn -->
     </div><!-- /.input-group -->
