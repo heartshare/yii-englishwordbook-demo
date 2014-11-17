@@ -12,25 +12,25 @@ class SiteTest extends WebTestCase
     {
         $this->open('');
 
-        if ($this->isTextPresent(WebTestCase::LOGOUT_BUTTON)) {
-            $this->clickAndWait('link='.WebTestCase::LOGOUT_BUTTON);
+        if ($this->isTextPresent(self::LOGOUT_BUTTON)) {
+            $this->clickAndWait('link='.self::LOGOUT_BUTTON);
         }
 
         // test login
         $this->login('', '');
         $this->assertTextPresent('ログイン情報が正しくありません。');
 
-        $this->login(WebTestCase::USERNAME, '');
+        $this->login(self::USERNAME, '');
         $this->assertTextPresent('ログイン情報が正しくありません。');
 
-        $this->login('', WebTestCase::PASSWORD);
+        $this->login('', self::PASSWORD);
         $this->assertTextPresent('ログイン情報が正しくありません。');
 
         $this->login();
-        $this->assertTextPresent(WebTestCase::LOGOUT_BUTTON);
+        $this->assertTextPresent(self::LOGOUT_BUTTON);
 
         // test logout
-        $this->clickAndWait('link='.WebTestCase::LOGOUT_BUTTON);
+        $this->clickAndWait('link='.self::LOGOUT_BUTTON);
         $this->assertLocation(TEST_BASE_URL.'login');
     }
 }

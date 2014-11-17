@@ -25,7 +25,7 @@ class WebTestCase extends CWebTestCase
     /**
      * User logged in.
      */
-    public function login($username = WebTestCase::USERNAME, $password = WebTestCase::PASSWORD)
+    public function login($username = self::USERNAME, $password = self::PASSWORD)
     {
         $this->open('login');
         $this->type('LoginForm[username]', $username);
