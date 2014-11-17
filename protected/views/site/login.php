@@ -11,11 +11,7 @@
 <?php $this->endWidget(); ?>
 <hr>
 
-<div class="panel panel-default">
-    <div class="panel-heading">以下の 2 つのアカウントでログインできます。</div>
-    <div class="panel-body">
-        <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin |
-        <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo
-    </div><!-- /.panel-body -->
-</div><!-- /.panel -->
-
+<?php $this->beginWidget('\TbPanel', array('title' => '以下の 2 つのアカウントでログインできます。')); ?>
+    <?php echo h($loginForm->getAttributeLabel('username')); ?>: admin <?php echo h($loginForm->getAttributeLabel('password')); ?>: adminadmin |
+    <?php echo h($loginForm->getAttributeLabel('username')); ?>: demo <?php echo h($loginForm->getAttributeLabel('password')); ?>: demodemo
+<?php $this->endWidget(); ?>
