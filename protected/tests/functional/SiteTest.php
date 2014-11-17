@@ -13,7 +13,7 @@ class SiteTest extends WebTestCase
         $this->open('');
 
         if ($this->isTextPresent(self::LOGOUT_BUTTON)) {
-            $this->clickAndWait('link='.self::LOGOUT_BUTTON);
+            $this->clickAndWait('link=' . self::LOGOUT_BUTTON);
         }
 
         // test login
@@ -30,8 +30,8 @@ class SiteTest extends WebTestCase
         $this->assertTextPresent(self::LOGOUT_BUTTON);
 
         // test logout
-        $this->clickAndWait('link='.self::LOGOUT_BUTTON);
-        $this->assertLocation(TEST_BASE_URL.'login');
+        $this->clickAndWait('link=' . self::LOGOUT_BUTTON);
+        $this->assertLocation(TEST_BASE_URL . 'login');
     }
 }
 

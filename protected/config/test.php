@@ -7,12 +7,8 @@ return CMap::mergeArray(
             'fixture' => array(
                 'class' => 'system.test.CDbFixtureManager',
             ),
-            /*
             'db' => array(
-                'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo_test.sqlite3',
-            ),
-             */
-            'db' => array(
+                // 'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo_test.sqlite3',
                 'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo_test',
                 'username' => 'root',
                 'password' => getenv('DB_PASS'),

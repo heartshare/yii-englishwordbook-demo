@@ -40,12 +40,8 @@ return array(
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
             ),
         ),
-        /*
         'db' => array(
-            'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo.sqlite3',
-        ),
-         */
-        'db' => array(
+            // 'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo.sqlite3',
             'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo',
             'emulatePrepare' => true,
             'username' => 'root',

@@ -7,12 +7,8 @@ return array(
         'log',
     ),
     'components' => array(
-        /*
         'db' => array(
-            'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo.sqlite3',
-        ),
-         */
-        'db' => array(
+            // 'connectionString' => 'sqlite:' . __DIR__ . '/../data/yii_englishwordbook_demo.sqlite3',
             'connectionString' => 'mysql:host=localhost;dbname=yii_englishwordbook_demo',
             'emulatePrepare' => true,
             'username' => 'root',
