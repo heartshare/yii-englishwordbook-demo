@@ -16,46 +16,44 @@
  * <?php echo $modelClass; ?> class file.
  *
  * The followings are the available columns in table '<?php echo $tableName; ?>':
-<?php foreach($columns as $column): ?>
- * @property <?php echo $column->type.' $'.$column->name."\n"; ?>
+<?php foreach ($columns as $column): ?>
+ * @property <?php echo $column->type . ' $' . $column->name . "\n"; ?>
 <?php endforeach; ?>
-<?php if(!empty($relations)): ?>
+<?php if (!empty($relations)): ?>
  *
  * The followings are the available model relations:
-<?php foreach($relations as $name=>$relation): ?>
+<?php foreach ($relations as $name => $relation): ?>
  * @property <?php
     if (preg_match("~^array\(self::([^,]+), '([^']+)', '([^']+)'\)$~", $relation, $matches))
     {
         $relationType = $matches[1];
         $relationModel = $matches[2];
 
-        switch($relationType){
+        switch ($relationType) {
             case 'HAS_ONE':
-                echo $relationModel.' $'.$name."\n";
+                echo $relationModel . ' $' . $name . "\n";
             break;
             case 'BELONGS_TO':
-                echo $relationModel.' $'.$name."\n";
+                echo $relationModel . ' $' . $name . "\n";
             break;
             case 'HAS_MANY':
-                echo $relationModel.'[] $'.$name."\n";
+                echo $relationModel . '[] $' . $name . "\n";
             break;
             case 'MANY_MANY':
-                echo $relationModel.'[] $'.$name."\n";
+                echo $relationModel . '[] $' . $name . "\n";
             break;
             default:
-                echo 'mixed $'.$name."\n";
+                echo 'mixed $' . $name . "\n";
         }
     }
     ?>
 <?php endforeach; ?>
 <?php endif; ?>
  */
-class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
+class <?php echo $modelClass; ?> extends <?php echo $this->baseClass . "\n"; ?>
 {
     /**
-     * Returns the static model of the specified AR class.
-     * @param string $className active record class name.
-     * @return <?php echo $modelClass; ?>|CActiveRecord active record model instance.
+     * @see CActiveRecord::model()
      */
     public static function model($className = __CLASS__)
     {
@@ -76,7 +74,7 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
     public function attributeLabels()
     {
         return array(
-<?php foreach($labels as $name=>$label): ?>
+<?php foreach ($labels as $name => $label): ?>
             <?php echo "'$name' => '$label',\n"; ?>
 <?php endforeach; ?>
         );
@@ -88,6 +86,9 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
     public function rules()
     {
         return array(
+<?php foreach ($rules as $rule): ?>
+            <?php echo $rule.",\n"; ?>
+<?php endforeach; ?>
             // on search
             array('<?php echo implode(', ', array_keys($columns)); ?>', 'safe', 'on'=>'search'),
         );
@@ -99,7 +100,7 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
     public function relations()
     {
         return array(
-<?php foreach($relations as $name=>$relation): ?>
+<?php foreach ($relations as $name => $relation): ?>
             <?php echo "'$name' => $relation,\n"; ?>
 <?php endforeach; ?>
         );
@@ -111,17 +112,12 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
      */
     public function search()
     {
-        $c = new CDbCriteria();
-
+        $c = new CDbCriteria;
 <?php
-foreach($columns as $name=>$column)
-{
-    if($column->type==='string')
-    {
+foreach ($columns as $name => $column) {
+    if ($column->type === 'string') {
         echo "        \$c->compare('$name', \$this->$name, true);\n";
-    }
-    else
-    {
+    } else {
         echo "        \$c->compare('$name', \$this->$name);\n";
     }
 }
@@ -129,10 +125,15 @@ foreach($columns as $name=>$column)
 
         return new CActiveDataProvider($this, array(
             'criteria' => $c,
+            'pagination' => array(
+                'pageVar' => 'page',
+            ),
             'sort' => array(
-                'defaultOrder' => 't.id DESC',
+                'sortVar' => 'sort',
+                'defaultOrder' => array(
+                    'id' => CSort::SORT_DESC,
+                ),
             ),
         ));
     }
 }
-

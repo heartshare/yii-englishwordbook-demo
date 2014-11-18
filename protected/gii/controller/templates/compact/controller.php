@@ -3,7 +3,7 @@
 /**
  * <?php echo $this->controllerClass; ?> class file.
  */
-class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseClass."\n"; ?>
+class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseClass . "\n"; ?>
 {
     /**
      * @see CController::accessRules()
@@ -28,4 +28,3 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseClass.
         $this->render('index');
     }
 }
-

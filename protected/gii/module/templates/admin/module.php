@@ -29,4 +29,3 @@ class <?php echo $this->moduleClass; ?> extends CWebModule
         }
     }
 }
-
